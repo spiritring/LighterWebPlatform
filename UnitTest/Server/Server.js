@@ -1,7 +1,12 @@
-/**
- * Created with JetBrains WebStorm.
- * User: Administrator
- * Date: 13-3-25
- * Time: 下午12:29
- * To change this template use File | Settings | File Templates.
- */
+var net = require('net');
+var server = net.createServer(function(c) { //'connection' listener
+    console.log('server connected');
+    c.on('end', function() {
+        console.log('server disconnected');
+    });
+    c.write('hello\r\n');
+    c.pipe(c);
+});
+server.listen(8124, function() { //'listening' listener
+    console.log('server bound');
+});
