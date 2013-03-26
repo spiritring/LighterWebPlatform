@@ -1,35 +1,39 @@
-"use strict";
+var ExBuffer = require('ExBuffer');
 var net = require('net');
 
-var createServer = function(port, maxFrameSize) {
-    var tcpServer = net.createServer();
-    tcpServer.on('listening', function() {
+console.log('-----------------------use in socket------------------------');
 
+//测试服务端
+var server = net.createServer(function(socket) {
+    console.log('client connected');
+    new Connection(socket);//有客户端连入时
+});
+server.listen(8124);
+
+//服务端中映射客户端的类
+function Connection(socket) {
+    var exBuffer = new ExBuffer();
+    exBuffer.on('data',onReceivePackData);
+
+    socket.on('data', function(data) {
+        exBuffer.put(data);//只要收到数据就往ExBuffer里面put
     });
 
-    tcpServer.on('connection', function(socket) {
-        socket.setEncoding('utf8');
-        socket.setKeepAlive(true);
+    //当服务端收到完整的包时
+    function onReceivePackData(buffer){
+        console.log('>> server receive data,length:'+buffer.length);
+        console.log(buffer.toString());
 
-        socket.on('data', function(data) {
-            console.log("data---------------------------");
-            console.log(data);
-        });
-        socket.on('close', function() {
-            console.log('close');
-        });
-    });
+        var data = 'wellcom, I am server';
+        var len = Buffer.byteLength(data);
 
-    tcpServer.on('error', function(exception) {
-        tcpServer.close();
-    });
+        //写入2个字节表示本次包长
+        var headBuf = new Buffer(2);
+        headBuf.writeUInt16BE(len, 0)
+        socket.write(headBuf);
 
-    tcpServer.on('close', function() {
-    });
-
-    tcpServer.listen(port);
-
-    return tcpServer;
-};
-
-createServer(8421,120);
+        var bodyBuf = new Buffer(len);
+        bodyBuf.write(data);
+        socket.write(bodyBuf);
+    }
+}
