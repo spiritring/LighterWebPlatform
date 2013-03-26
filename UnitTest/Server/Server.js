@@ -32,7 +32,7 @@ function Connection(socket) {
         {
             //写入2个字节表示本次包长
             var byBuffer = new ByteBuffer();
-            var buf = byBuffer.uint32(12345).string(data).pack(true);
+            var buf = byBuffer.string(data).pack(true);
             socket.write(buf);
         }
     }

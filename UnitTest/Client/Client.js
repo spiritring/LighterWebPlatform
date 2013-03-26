@@ -21,6 +21,6 @@ client.on('data', function(data) {
 exBuffer.on('data', function(buffer) {
     console.log('>> client receive data,length:'+buffer.length);
     var bytebuf = new ByteBuffer(buffer);
-    var resArr = bytebuf.uint32().string().unpack();
-    console.log(resArr[0] + resArr[1]);
+    var resArr = bytebuf.string().unpack();
+    console.log(resArr[0]);
 });
