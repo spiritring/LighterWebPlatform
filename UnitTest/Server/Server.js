@@ -27,13 +27,16 @@ function Connection(socket) {
         var data = 'wellcom, I am server';
         var len = Buffer.byteLength(data);
 
-        //写入2个字节表示本次包长
-        var headBuf = new Buffer(2);
-        headBuf.writeUInt16BE(len, 0)
-        socket.write(headBuf);
+        for(var i = 0 ; i < 10 ; i++)
+        {
+            //写入2个字节表示本次包长
+            var headBuf = new Buffer(2);
+            headBuf.writeUInt16BE(len, 0)
+            socket.write(headBuf);
 
-        var bodyBuf = new Buffer(len);
-        bodyBuf.write(data);
-        socket.write(bodyBuf);
+            var bodyBuf = new Buffer(len);
+            bodyBuf.write(data);
+            socket.write(bodyBuf);
+        }
     }
 }

@@ -9,9 +9,9 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364265664531" ignored="false" />
     <file path="/TCP.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364185661307" ignored="false" />
-    <file path="/Server.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364198983042" ignored="false" />
+    <file path="/Server.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364267389531" ignored="false" />
     <file path="/fragment.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364196160510" ignored="false" />
-    <file path="/Client.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364266071328" ignored="false" />
+    <file path="/Client.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364267359125" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,90 +34,25 @@
       <file leaf-file-name="Server.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UnitTest/Server/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="1" column="0" selection-start="36" selection-end="61" vertical-scroll-proportion="0.0">
+            <state line="36" column="42" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Client.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/UnitTest/Client/Client.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="33" selection-start="300" selection-end="300" vertical-scroll-proportion="0.42368045">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/test.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="29" selection-start="2235" selection-end="2245" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExBuffer.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/ExBuffer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="20" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="testByteBuffer.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="testByteBuffer.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/testByteBuffer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="48" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
+            <state line="4" column="36" selection-start="97" selection-end="107" vertical-scroll-proportion="0.15406562">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="node_globals.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/NodeJS/lib/NodeJS.jar!/com/jetbrains/nodejs/library/node_globals.js">
+      <file leaf-file-name="Client.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/UnitTest/Client/Client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="358" column="9" selection-start="10198" selection-end="10198" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="27" selection-start="415" selection-end="415" vertical-scroll-proportion="-6.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HallServerMain.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GateWayServerMain.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameServerMain.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GameServer/GameServerMain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="21" column="80" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,8 +83,8 @@
         <option value="$PROJECT_DIR$/LighterWebEngine/UDP.js" />
         <option value="$PROJECT_DIR$/LighterWebEngine/TCP.js" />
         <option value="$PROJECT_DIR$/Lib/ExBuffer.js" />
-        <option value="$PROJECT_DIR$/UnitTest/Server/Server.js" />
         <option value="$PROJECT_DIR$/UnitTest/Client/Client.js" />
+        <option value="$PROJECT_DIR$/UnitTest/Server/Server.js" />
       </list>
     </option>
   </component>
@@ -253,6 +188,10 @@
               <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ExBuffer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
@@ -315,11 +254,11 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287483" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19911224" sideWeight="0.4167813" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19911224" sideWeight="0.03301238" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5832187" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18707015" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.9669876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -454,51 +393,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="27" selection-start="415" selection-end="415" vertical-scroll-proportion="-6.0">
+        <state line="8" column="27" selection-start="415" selection-end="415" vertical-scroll-proportion="0.32481202">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/NodeJS/lib/NodeJS.jar!/com/jetbrains/nodejs/library/node_globals.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="358" column="9" selection-start="10198" selection-end="10198" vertical-scroll-proportion="0.0">
+        <state line="358" column="9" selection-start="10198" selection-end="10198" vertical-scroll-proportion="0.6468023">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/ExBuffer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="20" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
+        <state line="12" column="20" selection-start="269" selection-end="269" vertical-scroll-proportion="-6.3951497">
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/testByteBuffer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="48" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="29" selection-start="2235" selection-end="2245" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTest/Server/Server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="36" selection-end="61" vertical-scroll-proportion="0.0">
+        <state line="83" column="29" selection-start="2235" selection-end="2245" vertical-scroll-proportion="0.42368045">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UnitTest/Client/Client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="33" selection-start="300" selection-end="300" vertical-scroll-proportion="0.42368045">
+        <state line="21" column="80" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTest/Server/Server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="42" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/testByteBuffer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="36" selection-start="97" selection-end="107" vertical-scroll-proportion="0.15406562">
           <folding />
         </state>
       </provider>

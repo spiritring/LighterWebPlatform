@@ -19,6 +19,7 @@ var client = net.connect(8124, function() {
 });
 
 client.on('data', function(data) {
+    console.log("data-----------------------------------------------------------");
     exBuffer.put(data);//只要收到数据就往ExBuffer里面put
 });
 
