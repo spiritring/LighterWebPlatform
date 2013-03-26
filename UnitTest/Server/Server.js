@@ -1,4 +1,5 @@
 var ExBuffer = require('ExBuffer');
+var ByteBuffer = require('ByteBuffer');
 var net = require('net');
 
 console.log('-----------------------use in socket------------------------');
@@ -22,21 +23,17 @@ function Connection(socket) {
     //当服务端收到完整的包时
     function onReceivePackData(buffer){
         console.log('>> server receive data,length:'+buffer.length);
-        console.log(buffer.toString());
+        var bytebuf = new ByteBuffer(buffer);
+        var resArr = bytebuf.uint32().string().unpack();
+        console.log(resArr[0] + resArr[1]);
 
-        var data = 'wellcom, I am server';
-        var len = Buffer.byteLength(data);
-
+        var data = '12345';
         for(var i = 0 ; i < 10 ; i++)
         {
             //写入2个字节表示本次包长
-            var headBuf = new Buffer(2);
-            headBuf.writeUInt16BE(len, 0)
-            socket.write(headBuf);
-
-            var bodyBuf = new Buffer(len);
-            bodyBuf.write(data);
-            socket.write(bodyBuf);
+            var byBuffer = new ByteBuffer();
+            var buf = byBuffer.uint32(12345).string(data).pack(true);
+            socket.write(buf);
         }
     }
 }

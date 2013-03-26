@@ -9,9 +9,9 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364265664531" ignored="false" />
     <file path="/TCP.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364185661307" ignored="false" />
-    <file path="/Server.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364267389531" ignored="false" />
+    <file path="/Server.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364268258234" ignored="false" />
     <file path="/fragment.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364196160510" ignored="false" />
-    <file path="/Client.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364267359125" ignored="false" />
+    <file path="/Client.js" changelist="330b0df9-484c-4c1d-bade-28a4b0f71e9f" time="1364268383296" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,19 +31,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Server.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Server.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UnitTest/Server/Server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="42" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
+            <state line="30" column="37" selection-start="900" selection-end="900" vertical-scroll-proportion="0.46077034">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="testByteBuffer.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="testByteBuffer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/testByteBuffer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="36" selection-start="97" selection-end="107" vertical-scroll-proportion="0.15406562">
+            <state line="61" column="0" selection-start="1816" selection-end="1910" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -52,7 +52,7 @@
       <file leaf-file-name="Client.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UnitTest/Client/Client.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="80" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
+            <state line="12" column="3" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -190,6 +190,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="ExBuffer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LighterWebPlatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LighterWebPlatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="node_modules" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -423,21 +437,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UnitTest/Client/Client.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="80" selection-start="537" selection-end="537" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTest/Server/Server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="42" selection-start="1011" selection-end="1011" vertical-scroll-proportion="0.0">
+        <state line="12" column="3" selection-start="347" selection-end="347" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/ExBuffer/testByteBuffer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="36" selection-start="97" selection-end="107" vertical-scroll-proportion="0.15406562">
+        <state line="61" column="0" selection-start="1816" selection-end="1910" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTest/Server/Server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="37" selection-start="900" selection-end="900" vertical-scroll-proportion="0.46077034">
           <folding />
         </state>
       </provider>

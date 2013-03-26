@@ -1,21 +1,15 @@
 var ExBuffer = require('ExBuffer');
+var ByteBuffer = require('ByteBuffer');
 var net = require('net');
 
 var exBuffer = new ExBuffer();
 var client = net.connect(8124, function() {
-
-    var data = 'hello I am client';
-    var len = Buffer.byteLength(data);
+    var data = '12345';
 
     //写入2个字节表示本次包长
-    var headBuf = new Buffer(2);
-    headBuf.writeUInt16BE(len, 0)
-    client.write(headBuf);
-
-    var bodyBuf = new Buffer(len);
-    bodyBuf.write(data);
-    client.write(bodyBuf);
-
+    var byBuffer = new ByteBuffer();
+    var buf = byBuffer.uint32(12345).string(data).pack(true);
+    client.write(buf);
 });
 
 client.on('data', function(data) {
@@ -26,5 +20,7 @@ client.on('data', function(data) {
 //当客户端收到完整的数据包时
 exBuffer.on('data', function(buffer) {
     console.log('>> client receive data,length:'+buffer.length);
-    console.log(buffer.toString());
+    var bytebuf = new ByteBuffer(buffer);
+    var resArr = bytebuf.uint32().string().unpack();
+    console.log(resArr[0] + resArr[1]);
 });
