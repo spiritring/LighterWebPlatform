@@ -16,7 +16,7 @@ function CGateWay(Port, IP, Socket) {
 
 tcp.CreateServer(cfg.AdaptServerPort,
     function() {
-        console.log("Init");
+        console.log("Timeshift AdaptTCPServer Success!");
     },
 
     function(hSocket, sBuffer) {
@@ -72,7 +72,7 @@ function GateWay_RegGateWay(hSocket, oPacket) {
 //ws服务器流程
 ws.CreateServer(cfg.AdaptServerPort_WS,
     function () {
-
+        console.log("Timeshift AdaptWebSocketServer Success!");
     },
 
     function (hSocket, oPacket) {

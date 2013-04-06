@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" afterPath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/Config.js" afterPath="$PROJECT_DIR$/Common/Config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UnitTest/Client/WSClient.html" afterPath="$PROJECT_DIR$/UnitTest/Client/WSClient.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" afterPath="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" />
     </list>
     <ignored path="LighterWebPlatform.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,94 +34,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TCP.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="58" selection-start="168" selection-end="176" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdaptServerMain.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="AdaptServerMain.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="0" selection-start="1939" selection-end="1939" vertical-scroll-proportion="0.0">
+            <state line="71" column="9" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.3027523">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WebSocket.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LighterWebEngine/WebSocket.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="44" selection-start="734" selection-end="757" vertical-scroll-proportion="-16.96">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WSClient.html" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/UnitTest/Client/WSClient.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="38" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.4536517">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Client.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UnitTest/Client/Client.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="32" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Server.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UnitTest/Server/Server.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WSServer.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/UnitTest/Server/WSServer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="8" selection-start="0" selection-end="973" vertical-scroll-proportion="3.56">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Config.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Common/Config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="28" selection-start="76" selection-end="80" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HallServerMain.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GateWayServerMain.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="21" column="21" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -154,8 +70,8 @@
         <option value="$PROJECT_DIR$/UnitTest/Server/WSServer.js" />
         <option value="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" />
         <option value="$PROJECT_DIR$/Common/Config.js" />
-        <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
         <option value="$PROJECT_DIR$/UnitTest/Client/WSClient.html" />
+        <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
       </list>
     </option>
   </component>
@@ -336,7 +252,7 @@
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="Settings.JavaScript.Linters" />
+    <property name="options.lastSelected" value="preferences.keymap" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
     <property name="FullScreen" value="true" />
@@ -489,9 +405,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
+    <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="21" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
+        <state line="6" column="58" selection-start="168" selection-end="176" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LighterWebEngine/WebSocket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="44" selection-start="734" selection-end="757" vertical-scroll-proportion="0.56458056">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTest/Client/WSClient.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="10" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.42585033">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/UnitTest/Client/Client.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="32" selection-start="251" selection-end="251" vertical-scroll-proportion="0.41623712">
           <folding />
         </state>
       </provider>
@@ -503,61 +440,40 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTest/Client/Client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="32" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/UnitTest/Server/WSServer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="8" selection-start="0" selection-end="973" vertical-scroll-proportion="3.56">
+        <state line="3" column="8" selection-start="0" selection-end="973" vertical-scroll-proportion="-0.087882824">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="58" selection-start="168" selection-end="176" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LighterWebEngine/WebSocket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="44" selection-start="734" selection-end="757" vertical-scroll-proportion="-16.96">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="0" selection-start="1939" selection-end="1939" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Common/Config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="28" selection-start="76" selection-end="80" vertical-scroll-proportion="0.0">
+        <state line="2" column="28" selection-start="76" selection-end="80" vertical-scroll-proportion="0.04896907">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
+        <state line="3" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="0.073453605">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/UnitTest/Client/WSClient.html">
+    <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="38" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.4536517">
+        <state line="33" column="62" selection-start="1080" selection-end="1080" vertical-scroll-proportion="0.5837629">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="71" column="9" selection-start="1901" selection-end="1901" vertical-scroll-proportion="0.3027523">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
