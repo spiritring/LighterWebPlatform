@@ -21,10 +21,10 @@ tcp.CreateServer(cfg.AdaptServerPort,
     function(hSocket, sBuffer) {
         var oPacket = JSON.parse(sBuffer);
         switch (oPacket.MM) {
-            case "GetUuidPort":
+            case "GW_GetUuidPort":
                 GateWay_GetUUID(hSocket);
                 break;
-            case "RegGateWay":
+            case "GW_RegGateWay":
                 GateWay_RegGateWay(hSocket, oPacket);
                 break;
         };
@@ -42,9 +42,7 @@ tcp.CreateServer(cfg.AdaptServerPort,
                 break;
             }
         }
-
         console.log("Close = " + UID + " Port = " + iPort + " Length = " + Pool_GateWay.length);
-
     }
 );
 
@@ -53,7 +51,7 @@ function GateWay_GetUUID(hSocket){
     var iPORT = uuid.G_PORT() + cfg.GateWayServerPort;
 
     var sPacket = {};
-    sPacket["MM"] = "GetUuidPort";
+    sPacket["MM"] = "GW_GetUuidPort";
     sPacket["UUID"] = iUUID;
     sPacket["PORT"] = iPORT;
     tcp.SendBuffer(hSocket, JSON.stringify(sPacket));

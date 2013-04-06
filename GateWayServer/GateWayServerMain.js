@@ -6,7 +6,7 @@ var cfg = require("../Common/Config");
 var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function(sBuffer){
     var oPacket = JSON.parse(sBuffer);
     switch(oPacket.MM){
-        case "GetUuidPort":
+        case "GW_GetUuidPort":
             var iPort = parseInt(oPacket.PORT);
             RunServer(iPort);
             break;
@@ -14,7 +14,7 @@ var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function
 });
 
 var sPacket = {};
-sPacket["MM"] = "GetUuidPort"; //请求UUID Port
+sPacket["MM"] = "GW_GetUuidPort"; //请求UUID Port
 tcp.SendBuffer(hASSocket, JSON.stringify(sPacket));
 
 /////////////////////////////////////////////////////////
@@ -28,7 +28,7 @@ function RunServer(iPort) {
         function() {
             console.log("Init");
             sPacket = {};
-            sPacket.MM = "RegGateWay"; //客户端自动连接网关操作
+            sPacket.MM = "GW_RegGateWay"; //客户端自动连接网关操作
             sPacket.IP = G_GateWay.address().address;
             sPacket.Port = G_GateWay.address().port;
             tcp.SendBuffer(hASSocket,JSON.stringify(sPacket));

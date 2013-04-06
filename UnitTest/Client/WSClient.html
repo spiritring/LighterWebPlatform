@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Json Messaging Example</title>
+    <style>
+        div#output {
+            border: 1px solid #000;
+            width: 960px;
+            height: 450px;
+            overflow: auto;
+            background-color: #333;
+            color: #6cf;
+        }
+
+        strong {
+            color: #f66;
+        }
+
+        input#input {
+            border: 1px solid #000;
+            width: 640px;
+        }
+
+        button {
+            border: 1px solid #000;
+            width: 100px;
+        }
+    </style>
+    <script>
+        // connect to the Json Messaging server and return an 'connection' object
+        function connect(host, port, messageListener, errorListener) {
+            window.WebSocket = window.WebSocket || window.MozWebSocket;
+
+            if (!window.WebSocket) {
+                alert('Your browser does not support WebSocket.');
+                return null;
+            }
+
+            var connection = new WebSocket('ws://' + host + ':' + port);
+
+            connection.onmessage = function(message) {
+                var parsed = JSON.parse(message.data);
+                switch (parsed.type) {
+                    case 'publish':
+                        messageListener(parsed.content, parsed.match);
+                        break;
+                    case 'error':
+                        errorListener(parsed.content);
+                        break;
+                }
+            };
+
+            connection.publish = function(content) {
+                connection.send(JSON.stringify({
+                    type: 'publish',
+                    content: content
+                }));
+            };
+
+            return connection;
+        }
+
+        // the 'connection' object
+        var connection = null;
+
+        var output = null;
+
+        var input = null;
+
+        // initialize
+        window.onload = function() {
+            output = document.getElementById('output');
+            input = document.getElementById('input');
+
+            // connect to the local server
+            connection = connect(
+                    'localhost',
+                    8155,
+                    // message handler
+                    function(content, match) {
+                        output.innerHTML += ('<strong>Message: </strong>' + content + '<br>\n');
+                    },
+                    // error handler
+                    function(content) {
+                        output.innerHTML += ('<strong>Error: </strong>' + content + '<br>\n');
+                    }
+            );
+        };
+
+        function _send() {
+            connection.publish(input.value, 'test');
+        }
+
+        function _clear() {
+            output.innerHTML = '';
+        }
+    </script>
+</head>
+<body>
+<div id="output"></div>
+<input type="text" id="input">
+<button id="send" onclick="_send()">Send</button>
+<button id="clear" onclick="_clear()">Clear</button>
+</body>
+</html>
