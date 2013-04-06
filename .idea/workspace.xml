@@ -2,22 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UnitTest/Client/WSClient.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/UnitTest/Server/WSServer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" afterPath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Common/Config.js" afterPath="$PROJECT_DIR$/Common/Config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" afterPath="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HallServer/HallServerMain.js" afterPath="$PROJECT_DIR$/HallServer/HallServerMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/UnitTest/Client/WSClient.html" afterPath="$PROJECT_DIR$/UnitTest/Client/WSClient.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" afterPath="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" />
     </list>
     <ignored path="LighterWebPlatform.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365250240132" ignored="false" />
     <file path="/TCP.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365248389930" ignored="false" />
-    <file path="/Config.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365249488513" ignored="false" />
+    <file path="/Config.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365254321746" ignored="false" />
     <file path="/GateWayProcess.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365249754489" ignored="false" />
     <file path="/GateWayServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365249972901" ignored="false" />
     <file path="/fragment.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365253184820" ignored="false" />
+    <file path="/WebSocket.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365254098612" ignored="false" />
+    <file path="/AdaptServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365254635016" ignored="false" />
+    <file path="/WSClient.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365254669589" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +40,7 @@
       <file leaf-file-name="TCP.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="11" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0">
+            <state line="6" column="58" selection-start="168" selection-end="176" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -49,7 +49,7 @@
       <file leaf-file-name="AdaptServerMain.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
+            <state line="76" column="0" selection-start="1939" selection-end="1939" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -60,7 +60,7 @@
       <file leaf-file-name="WebSocket.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/LighterWebEngine/WebSocket.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="26" column="44" selection-start="734" selection-end="757" vertical-scroll-proportion="-16.96">
               <folding />
             </state>
           </provider>
@@ -69,7 +69,7 @@
       <file leaf-file-name="WSClient.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/UnitTest/Client/WSClient.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="43" column="0" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.33248082">
+            <state line="79" column="38" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.4536517">
               <folding />
             </state>
           </provider>
@@ -96,7 +96,7 @@
       <file leaf-file-name="WSServer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/UnitTest/Server/WSServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="14" selection-start="753" selection-end="753" vertical-scroll-proportion="-14.52">
+            <state line="3" column="8" selection-start="0" selection-end="973" vertical-scroll-proportion="3.56">
               <folding />
             </state>
           </provider>
@@ -105,7 +105,7 @@
       <file leaf-file-name="Config.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Common/Config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="31" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
+            <state line="2" column="28" selection-start="76" selection-end="80" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -148,13 +148,13 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/LighterWebEngine/TCP.js" />
-        <option value="$PROJECT_DIR$/Common/Config.js" />
         <option value="$PROJECT_DIR$/HallServer/HallServerMain.js" />
         <option value="$PROJECT_DIR$/AdaptServer/GateWayProcess.js" />
-        <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
         <option value="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
-        <option value="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" />
         <option value="$PROJECT_DIR$/UnitTest/Server/WSServer.js" />
+        <option value="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" />
+        <option value="$PROJECT_DIR$/Common/Config.js" />
+        <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
         <option value="$PROJECT_DIR$/UnitTest/Client/WSClient.html" />
       </list>
     </option>
@@ -338,7 +338,7 @@
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="Settings.JavaScript.Linters" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/UnitTest/Client/WSClient.html" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
     <property name="FullScreen" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
     <property name="options.splitter.details.proportions" value="0.2" />
@@ -377,9 +377,15 @@
       <ConfigurationWrapper RunnerId="NodeJS.debug" />
       <method />
     </configuration>
-    <list size="2">
+    <configuration default="false" name="AdaptServerMain.js" type="NodeJSConfigurationType" factoryName="Node.js" path-to-node="/usr/local/bin/node" path-to-js-file="AdaptServer/AdaptServerMain.js" working-dir="$PROJECT_DIR$">
+      <RunnerSettings RunnerId="NodeJS.debug" />
+      <ConfigurationWrapper RunnerId="NodeJS.debug" />
+      <method />
+    </configuration>
+    <list size="3">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.WSClient" />
       <item index="1" class="java.lang.String" itemvalue="Node.js.WSServer.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.AdaptServerMain.js" />
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
@@ -399,7 +405,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24982357" sideWeight="0.6007463" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39925373" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -483,46 +489,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="11" selection-start="492" selection-end="492" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="31" selection-start="193" selection-end="193" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="21" column="21" selection-start="680" selection-end="680" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="0" selection-start="358" selection-end="358" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/LighterWebEngine/WebSocket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -543,14 +512,51 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/UnitTest/Server/WSServer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="14" selection-start="753" selection-end="753" vertical-scroll-proportion="-14.52">
+        <state line="3" column="8" selection-start="0" selection-end="973" vertical-scroll-proportion="3.56">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="58" selection-start="168" selection-end="176" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LighterWebEngine/WebSocket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="44" selection-start="734" selection-end="757" vertical-scroll-proportion="-16.96">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="76" column="0" selection-start="1939" selection-end="1939" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/Config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="28" selection-start="76" selection-end="80" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="86" selection-end="86" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/UnitTest/Client/WSClient.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="43" column="0" selection-start="1142" selection-end="1142" vertical-scroll-proportion="0.33248082">
+        <state line="79" column="38" selection-start="2170" selection-end="2170" vertical-scroll-proportion="0.4536517">
           <folding />
         </state>
       </provider>

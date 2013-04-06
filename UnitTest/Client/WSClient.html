@@ -41,9 +41,9 @@
 
             connection.onmessage = function(message) {
                 var parsed = JSON.parse(message.data);
-                switch (parsed.type) {
+                switch (parsed.MM) {
                     case 'publish':
-                        messageListener(parsed.content, parsed.match);
+                        messageListener(parsed.Text);
                         break;
                     case 'error':
                         errorListener(parsed.content);
@@ -53,8 +53,8 @@
 
             connection.publish = function(content) {
                 connection.send(JSON.stringify({
-                    type: 'publish',
-                    content: content
+                    MM: 'publish',
+                    Text: content
                 }));
             };
 
@@ -76,9 +76,9 @@
             // connect to the local server
             connection = connect(
                     'localhost',
-                    8155,
+                    9901,
                     // message handler
-                    function(content, match) {
+                    function(content) {
                         output.innerHTML += ('<strong>Message: </strong>' + content + '<br>\n');
                     },
                     // error handler
@@ -89,7 +89,7 @@
         };
 
         function _send() {
-            connection.publish(input.value, 'test');
+            connection.publish(input.value);
         }
 
         function _clear() {

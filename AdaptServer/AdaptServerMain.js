@@ -2,6 +2,7 @@
 // 启动服务器时候.先启动该服务器.之后其他的服都会请求该分配服.分配端口号之类的操作.
 
 var tcp = require("../LighterWebEngine/TCP");
+var ws = require("../LighterWebEngine/WebSocket");
 var cfg = require("../Common/Config");
 var uuid = require("../LighterWebEngine/UUID");
 
@@ -67,6 +68,26 @@ function GateWay_RegGateWay(hSocket, oPacket) {
 };
 
 
+//////////////////////////////////////////////
+//ws服务器流程
+ws.CreateServer(cfg.AdaptServerPort_WS,
+    function () {
 
+    },
 
+    function (hSocket, oPacket) {
+        switch(oPacket.MM) {
+            case "publish":
+                var sPacket = {};
+                sPacket.MM = "publish";
+                sPacket.Text = oPacket.Text;
+                ws.SendBuffer(hSocket, JSON.stringify(oPacket));
+                break;
+        }
+    },
+
+    function (reasonCode, description) {
+
+    }
+);
 
