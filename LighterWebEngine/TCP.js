@@ -2,7 +2,7 @@ var ExBuffer = require('ExBuffer');
 var ByteBuffer = require('ByteBuffer');
 var net = require('net');
 
-function CreateServer(iPort, funReceive) {
+function CreateServer(iPort, funInit, funReceive, funClose) {
     var server = net.createServer(function(hSocket) {
         // 粘包
         var exBuffer = new ExBuffer();
@@ -16,6 +16,13 @@ function CreateServer(iPort, funReceive) {
         hSocket.on('data', function(data) {
             exBuffer.put(data);
         });
+
+        // 断开
+        hSocket.on('close', function() {
+            funClose(hSocket);
+        });
+
+        funInit(hSocket);
     });
     server.listen(iPort);
     return server;

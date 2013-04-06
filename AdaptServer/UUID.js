@@ -1,9 +1,14 @@
 var Pool_GateWayUUIDSocket = [];
 var Pool_GateWaySocketUUID = [];
 var Adapt_UUID = 0;
+var Adapt_PORT = 0;
 
 function G_UUID(){
     return ++Adapt_UUID;
+};
+
+function G_PORT(){
+    return ++Adapt_PORT;
 };
 
 function G_GetSocket(UUID) {
@@ -33,6 +38,7 @@ function G_RemoveU(UUID) {
 
 module.exports = {
     G_UUID: G_UUID,
+    G_PORT: G_PORT,
     G_GetSocket: G_GetSocket,
     G_GetUUID: G_GetUUID,
     G_SetSU: G_SetSU,
