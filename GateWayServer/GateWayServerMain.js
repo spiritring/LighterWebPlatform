@@ -42,5 +42,4 @@ function RunServer(iPort) {
             console.log("close");
         }
     );
-    console.log(iPort);
-}
+};

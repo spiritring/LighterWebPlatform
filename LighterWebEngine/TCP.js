@@ -1,6 +1,8 @@
+"use strict";
+
+var net = require('net');
 var ExBuffer = require('ExBuffer');
 var ByteBuffer = require('ByteBuffer');
-var net = require('net');
 
 function CreateServer(iPort, funInit, funReceive, funClose) {
     var server = net.createServer(function(hSocket) {
@@ -21,6 +23,13 @@ function CreateServer(iPort, funInit, funReceive, funClose) {
         hSocket.on('close', function() {
             funClose(hSocket);
         });
+
+        //数据错误事件
+        hSocket.on('error',function(exception){
+            console.log('socket error:' + exception);
+            hSocket.end();
+        });
+
     });
     server.listen(iPort);
 
@@ -51,6 +60,15 @@ function CreateClient(iPort, sHost, funInit, funReceive) {
 
     hSocket.on('data', function(data) {
         exBuffer.put(data);
+    });
+
+    hSocket.on('error',function(error){
+        console.log('error:'+ error);
+        hSocket.destory();
+    });
+
+    hSocket.on('close',function(){
+        console.log('Connection closed');
     });
 
     //当客户端收到完整的数据包时
