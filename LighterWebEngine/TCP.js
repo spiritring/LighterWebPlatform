@@ -28,9 +28,14 @@ function SendBuffer(hSocket, sBuffer) {
 };
 
 
-function CreateClient(iPort, funInit, funReceive) {
+function CreateClient(iPort, sHost, funInit, funReceive) {
+
+    if(sHost = "") {
+        sHost = "127.0.0.1";
+    }
+
     var exBuffer = new ExBuffer();
-    var hSocket = net.connect(iPort, function() {
+    var hSocket = net.connect(iPort, sHost, function() {
         funInit();
     });
 
