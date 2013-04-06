@@ -1,4 +1,5 @@
 var tcp = require("../LighterWebEngine/TCP");
+var ws = require("../LighterWebEngine/WebSocket");
 var cfg = require("../Common/Config");
 
 /////////////////////////////////////////////////////////
@@ -21,13 +22,14 @@ tcp.SendBuffer(hASSocket, JSON.stringify(sPacket));
 /////////////////////////////////////////////////////////
 // 服务器启动完成.监听消息
 var G_GateWay = null;
+var G_HallSocket = null;
 
 function RunServer(iPORT, iUUID) {
     console.log(iPORT);
 
-    G_GateWay = tcp.CreateServer(iPORT,
+    G_GateWay = ws.CreateServer(iPORT,
         function() {
-            console.log("Init");
+            console.log("GateWay Init Success!");
             sPacket = {};
             sPacket.MM = "GW_RegGateWay"; //客户端自动连接网关操作
             sPacket.IP = G_GateWay.address().address;
@@ -38,13 +40,22 @@ function RunServer(iPORT, iUUID) {
             G_GateWay.PORT = iPORT;
 
             //连接大厅
+            G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerPort,
+                function() {
+
+                },
+
+                function(sBuffer) {
+
+                }
+            );
         },
 
         function(hSocket, sBuffer) {
             console.log(sBuffer);
         },
 
-        function(hSocket) {
+        function(hSocket, reasonCode, description) {
             console.log("close");
         }
     );

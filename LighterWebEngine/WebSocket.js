@@ -24,7 +24,7 @@ function CreateServer(port, funInit, funReceive, funClose) {
         });
 
         hSocket.on('close', function(reasonCode, description) {
-            funClose(reasonCode, description);
+            funClose(hSocket, reasonCode, description);
         });
     });
 

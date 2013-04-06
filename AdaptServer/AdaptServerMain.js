@@ -89,7 +89,7 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
         }
     },
 
-    function (reasonCode, description) {
+    function (hSocket, reasonCode, description) {
 
     }
 );
