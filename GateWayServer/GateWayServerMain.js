@@ -3,7 +3,7 @@ var cfg = require("../Common/Config");
 
 /////////////////////////////////////////////////////////
 // 向AdapterServer请求UUID和端口号
-var hSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function(sBuffer){
+var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function(sBuffer){
     var oPacket = JSON.parse(sBuffer);
     switch(oPacket.MM){
         case "GetUuidPort":
@@ -15,15 +15,23 @@ var hSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function(s
 
 var sPacket = {};
 sPacket["MM"] = "GetUuidPort"; //请求UUID Port
-tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
+tcp.SendBuffer(hASSocket, JSON.stringify(sPacket));
 
 /////////////////////////////////////////////////////////
 // 服务器启动完成.监听消息
+var G_GateWay = null;
+
 function RunServer(iPort) {
     console.log(iPort);
-    tcp.CreateServer(iPort,
-        function(hSocket) {
 
+    G_GateWay = tcp.CreateServer(iPort,
+        function() {
+            console.log("Init");
+            sPacket = {};
+            sPacket.MM = "RegGateWay"; //客户端自动连接网关操作
+            sPacket.IP = G_GateWay.address().address;
+            sPacket.Port = G_GateWay.address().port;
+            tcp.SendBuffer(hASSocket,JSON.stringify(sPacket));
         },
 
         function(hSocket, sBuffer) {
@@ -34,4 +42,5 @@ function RunServer(iPort) {
             console.log("close");
         }
     );
+    console.log(iPort);
 }

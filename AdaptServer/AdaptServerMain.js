@@ -3,12 +3,19 @@
 
 var tcp = require("../LighterWebEngine/TCP");
 var cfg = require("../Common/Config");
-var uuid = require("./UUID");
+var uuid = require("../LighterWebEngine/UUID");
+
+//网关池.用来分析.玩家与哪个网关相连
+var Pool_GateWay = [];
+function CGateWay(Port, IP, Socket) {
+    this.Port = Port;
+    this.IP = IP;
+    this.Socket = Socket;
+};
 
 tcp.CreateServer(cfg.AdaptServerPort,
-
-    function(hSocket) {
-
+    function() {
+        console.log("Init");
     },
 
     function(hSocket, sBuffer) {
@@ -17,12 +24,27 @@ tcp.CreateServer(cfg.AdaptServerPort,
             case "GetUuidPort":
                 GateWay_GetUUID(hSocket);
                 break;
+            case "RegGateWay":
+                GateWay_RegGateWay(hSocket, oPacket);
+                break;
         };
     },
 
     function(hSocket) {
-        console.log("close = " + uuid.G_GetUUID(hSocket));
+        var UID = uuid.G_GetUUID(hSocket);
         uuid.G_RemoveS(hSocket);
+        var iPort = 0;
+
+        for (var i = 0 ; i < Pool_GateWay.length ; i++) {
+            if (Pool_GateWay[i].Socket === hSocket) {
+                iPort = Pool_GateWay[i].Port;
+                Pool_GateWay.splice(i,1);
+                break;
+            }
+        }
+
+        console.log("Close = " + UID + " Port = " + iPort + " Length = " + Pool_GateWay.length);
+
     }
 );
 
@@ -39,6 +61,11 @@ function GateWay_GetUUID(hSocket){
     uuid.G_SetSU(hSocket, iUUID);
 
     console.log(iPORT);
+};
+
+function GateWay_RegGateWay(hSocket, oPacket) {
+    var GW = new CGateWay(oPacket.Port, oPacket.IP, hSocket);
+    Pool_GateWay.push(GW);
 };
 
 

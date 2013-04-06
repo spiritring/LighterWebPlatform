@@ -21,10 +21,13 @@ function CreateServer(iPort, funInit, funReceive, funClose) {
         hSocket.on('close', function() {
             funClose(hSocket);
         });
-
-        funInit(hSocket);
     });
     server.listen(iPort);
+
+    server.on('listening', function() {
+        funInit();
+    });
+
     return server;
 };
 
@@ -60,11 +63,16 @@ function CreateClient(iPort, sHost, funInit, funReceive) {
     return hSocket;
 }
 
+function Close(server) {
+    server.close();
+}
+
 
 module.exports = {
     CreateServer: CreateServer,
     CreateClient: CreateClient,
-    SendBuffer: SendBuffer
+    SendBuffer: SendBuffer,
+    Close: Close
 };
 
 
