@@ -15,13 +15,7 @@ function G_GetSocket(UUID) {
 };
 
 function G_GetUUID(Socket) {
-    for (var i in Pool_GateWayUUIDSocket) {
-        if (Pool_GateWayUUIDSocket[i] === Socket) {
-            return i;
-            break;
-        }
-    }
-    return null;
+    return Socket.UUID;
 };
 
 function G_SetSU(Socket, UUID) {
@@ -29,12 +23,7 @@ function G_SetSU(Socket, UUID) {
 };
 
 function G_RemoveS(Socket) {
-    for (var i in Pool_GateWayUUIDSocket) {
-        if (Pool_GateWayUUIDSocket[i] === Socket) {
-            delete Pool_GateWayUUIDSocket[i];
-            break;
-        }
-    }
+    delete Pool_GateWayUUIDSocket[Socket.UUID];
 };
 
 function G_RemoveU(UUID) {

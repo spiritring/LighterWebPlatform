@@ -7,8 +7,9 @@ var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function
     var oPacket = JSON.parse(sBuffer);
     switch(oPacket.MM){
         case "GW_GetUuidPort":
-            var iPort = parseInt(oPacket.PORT);
-            RunServer(iPort);
+            var iPORT = parseInt(oPacket.PORT);
+            var iUUID = parseInt(oPacket.UUID);
+            RunServer(iPORT, iUUID);
             break;
     };
 });
@@ -21,10 +22,10 @@ tcp.SendBuffer(hASSocket, JSON.stringify(sPacket));
 // 服务器启动完成.监听消息
 var G_GateWay = null;
 
-function RunServer(iPort) {
-    console.log(iPort);
+function RunServer(iPORT, iUUID) {
+    console.log(iPORT);
 
-    G_GateWay = tcp.CreateServer(iPort,
+    G_GateWay = tcp.CreateServer(iPORT,
         function() {
             console.log("Init");
             sPacket = {};
@@ -32,6 +33,11 @@ function RunServer(iPort) {
             sPacket.IP = G_GateWay.address().address;
             sPacket.Port = G_GateWay.address().port;
             tcp.SendBuffer(hASSocket,JSON.stringify(sPacket));
+
+            G_GateWay.UUID = iUUID;
+            G_GateWay.PORT = iPORT;
+
+            //连接大厅
         },
 
         function(hSocket, sBuffer) {

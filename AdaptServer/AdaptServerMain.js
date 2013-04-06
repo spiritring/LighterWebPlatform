@@ -51,6 +51,9 @@ function GateWay_GetUUID(hSocket){
     var iUUID = uuid.G_UUID();
     var iPORT = uuid.G_PORT() + cfg.GateWayServerPort;
 
+    hSocket.UUID = iUUID;
+    hSocket.PORT= iPORT;
+
     var sPacket = {};
     sPacket["MM"] = "GW_GetUuidPort";
     sPacket["UUID"] = iUUID;
