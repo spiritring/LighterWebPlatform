@@ -13,6 +13,12 @@ var TSMainMenu = cc.Layer.extend({
             logo.setPosition(cc.p(0, 250));
             this.addChild(logo, 10, 1);
 
+            var lbScore = cc.LabelBMFont.create(String(G_hSocket.PORT), s_arial14_fnt);
+            lbScore.setAnchorPoint( cc.p(1,0) );
+            lbScore.setAlignment( cc.TEXT_ALIGNMENT_RIGHT );
+            lbScore.setPosition(winSize.width - 5 , winSize.height - 30);
+            this.addChild(lbScore, 1000);
+
             var newGameNormal = cc.Sprite.create(s_menu, cc.rect(0, 0, 126, 33));
             var newGameSelected = cc.Sprite.create(s_menu, cc.rect(0, 33, 126, 33));
             var newGameDisabled = cc.Sprite.create(s_menu, cc.rect(0, 33 * 2, 126, 33));

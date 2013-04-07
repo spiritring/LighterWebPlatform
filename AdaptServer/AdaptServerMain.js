@@ -45,6 +45,10 @@ tcp.CreateServer(cfg.AdaptServerPort,
             }
         }
         console.log("Close = " + UID + " Port = " + iPort + " Length = " + Pool_GateWay.length);
+    },
+
+    function(hSocket) {
+
     }
 );
 
@@ -92,7 +96,7 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
                     console.log("当前没有网关开启!");
                 }
 
-                var index = G_ClientNumber % Pool_GateWay.length;
+                var index = (G_ClientNumber - 1) % Pool_GateWay.length;
                 var GW = Pool_GateWay[index];
 
                 var sPacket = {};
@@ -106,12 +110,15 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
     },
 
     function (hSocket, reasonCode, description) {
-        console.log("客户端下线退出游戏!");
         G_ClientNumber --;
+        console.log("客户端下线退出游戏! 人数:" + G_ClientNumber);
+
     },
 
     function (hSocket) {
         G_ClientNumber ++;
+        console.log("客户端上线! 人数:" + G_ClientNumber);
+
     }
 );
 

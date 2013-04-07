@@ -65,18 +65,17 @@ function RunServer(iPORT, iUUID) {
         },
 
         function(hSocket, reasonCode, description) {
-            console.log("close");
             G_ClientNumber --;
             delete G_PoolClientSocket[hSocket.UUID];
+            console.log("close 网关客户数:" + G_ClientNumber + " UUID:" + hSocket.UUID);
         },
 
         function(hSocket) {
-            console.log("new socket");
             G_ClientNumber ++;
             G_ClientUUID++;
             hSocket.UUID = G_GateWay.UUID * 10000 + G_ClientUUID;
             G_PoolClientSocket[hSocket.UUID] = hSocket;
-            console.log("new socket 网关客户数:" + G_ClientNumber + " UUID:" + hSocket.UUID);
+            console.log("newSocket 网关客户数:" + G_ClientNumber + " UUID:" + hSocket.UUID);
         }
     );
 };

@@ -13,5 +13,9 @@ tcp.CreateServer(cfg.HallServerPort,
 
     function(hSocket) {
 
+    },
+
+    function(hSocket) {
+
     }
 );
