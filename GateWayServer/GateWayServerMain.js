@@ -52,6 +52,12 @@ function RunServer(iPORT, iUUID) {
         },
 
         function(hSocket, sBuffer) {
+            if(G_HallSocket == null){
+                console.log("没有连接到大厅服务!");
+                return;
+            }
+
+            tcp.SendBuffer(G_HallSocket,sBuffer);
             console.log(sBuffer);
         },
 

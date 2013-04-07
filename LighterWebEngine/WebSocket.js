@@ -19,8 +19,8 @@ function CreateServer(port, funInit, funReceive, funClose) {
         var hSocket = request.accept(null, request.origin);
 
         hSocket.on('message', function(message) {
-            var oPacket = JSON.parse(message.utf8Data);
-            funReceive(hSocket, oPacket);
+
+            funReceive(hSocket, message.utf8Data);
         });
 
         hSocket.on('close', function(reasonCode, description) {

@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" afterPath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" afterPath="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HallServer/HallServerMain.js" afterPath="$PROJECT_DIR$/HallServer/HallServerMain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" afterPath="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" />
     </list>
     <ignored path="LighterWebPlatform.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -13,20 +16,21 @@
     <file path="/TCP.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365248389930" ignored="false" />
     <file path="/Config.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365254321746" ignored="false" />
     <file path="/GateWayProcess.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365249754489" ignored="false" />
-    <file path="/GateWayServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365262122066" ignored="false" />
+    <file path="/GateWayServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365319968716" ignored="false" />
     <file path="/fragment.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365318317359" ignored="false" />
-    <file path="/WebSocket.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365262153971" ignored="false" />
-    <file path="/AdaptServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365318993502" ignored="false" />
+    <file path="/WebSocket.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365320133404" ignored="false" />
+    <file path="/AdaptServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365320179725" ignored="false" />
     <file path="/WSClient.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365254669589" ignored="false" />
     <file path="$PROJECT_DIR$/../JSTest/HelloWorld.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365257622819" ignored="false" />
     <file path="/HelloWorld.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365257616035" ignored="false" />
     <file path="/UUID.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365259589164" ignored="false" />
-    <file path="/HallServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365261493103" ignored="false" />
+    <file path="/HallServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365320278759" ignored="false" />
     <file path="/main.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365314952734" ignored="false" />
     <file path="/cocos2d.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365315391628" ignored="false" />
     <file path="/WebSocketEngine.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365319191585" ignored="false" />
     <file path="/index.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365318497983" ignored="false" />
     <file path="/TSUtil" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365317871465" ignored="false" />
+    <file path="$PROJECT_DIR$/.idea/workspace.xml" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365320330364" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +53,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="0" selection-start="1464" selection-end="1615" vertical-scroll-proportion="-19.0">
+            <state line="53" column="19" selection-start="1255" selection-end="1255" vertical-scroll-proportion="-14.25">
               <folding>
                 <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -58,19 +62,46 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TCP.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
+      <file leaf-file-name="GateWayServerMain.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="66" column="10" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0">
+            <state line="49" column="17" selection-start="1516" selection-end="1516" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdaptServerMain.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="HallServerMain.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="2" selection-start="355" selection-end="355" vertical-scroll-proportion="0.6696035">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebSocket.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LighterWebEngine/WebSocket.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="21" column="0" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TCP.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="42" column="9" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdaptServerMain.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="97" column="14" selection-start="2766" selection-end="2766" vertical-scroll-proportion="0.95789474">
+            <state line="92" column="0" selection-start="2572" selection-end="2572" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -94,37 +125,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TSGameLayer.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSGameLayer.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="217" column="6" selection-start="6290" selection-end="6290" vertical-scroll-proportion="-9.52">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/build.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="WebSocketEngine.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/WebSocketEngine.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="39" column="22" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HTML5.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavascriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/HTML5.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1533" column="56" selection-start="27052" selection-end="27091" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -162,17 +166,17 @@
         <option value="$PROJECT_DIR$/Common/Config.js" />
         <option value="$PROJECT_DIR$/UnitTest/Client/WSClient.html" />
         <option value="$PROJECT_DIR$/LighterWebEngine/UUID.js" />
-        <option value="$PROJECT_DIR$/HallServer/HallServerMain.js" />
-        <option value="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" />
-        <option value="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/main.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/cocos2d.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSGameLayer.js" />
         <option value="$PROJECT_DIR$/Common/TSUtil" />
         <option value="$PROJECT_DIR$/LighterWebEngine/TCP.js" />
-        <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/WebSocketEngine.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/index.html" />
+        <option value="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
+        <option value="$PROJECT_DIR$/LighterWebEngine/WebSocket.js" />
+        <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
+        <option value="$PROJECT_DIR$/HallServer/HallServerMain.js" />
       </list>
     </option>
   </component>
@@ -235,7 +239,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTest" />
+              <option name="myItemId" value="LighterWebEngine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -249,11 +253,21 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="UnitTest" />
+              <option name="myItemId" value="HallServer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LighterWebPlatform" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LighterWebPlatform" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Client" />
+              <option name="myItemId" value="GateWayServer" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -286,50 +300,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="PuPlantGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClientGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PuPlantGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ClientGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PuPlantGame" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="engine" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -462,13 +432,13 @@
     <editor active="false" />
     <layout>
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Changes" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.329602" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24982357" sideWeight="0.670398" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37189054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24982357" sideWeight="0.62810946" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37189054" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32956952" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -547,27 +517,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/UnitTest/Client/Client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="32" selection-start="251" selection-end="251" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/resource.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="45" selection-start="2531" selection-end="2531" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSMainMenu.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="28" column="35" selection-start="1367" selection-end="1367" vertical-scroll-proportion="0.0">
@@ -624,27 +573,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="10" selection-start="1542" selection-end="1542" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/WebSocketEngine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="39" column="22" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="0" selection-start="1464" selection-end="1615" vertical-scroll-proportion="-19.0">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -655,9 +587,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="53" column="19" selection-start="1255" selection-end="1255" vertical-scroll-proportion="-14.25">
+          <folding>
+            <element signature="n#style#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="42" column="9" selection-start="992" selection-end="992" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LighterWebEngine/WebSocket.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="0" selection-start="538" selection-end="538" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="97" column="14" selection-start="2766" selection-end="2766" vertical-scroll-proportion="0.95789474">
+        <state line="92" column="0" selection-start="2572" selection-end="2572" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="17" selection-start="1516" selection-end="1516" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="2" selection-start="355" selection-end="355" vertical-scroll-proportion="0.6696035">
           <folding />
         </state>
       </provider>

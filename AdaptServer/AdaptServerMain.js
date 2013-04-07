@@ -81,7 +81,8 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
         console.log("Timeshift AdaptWebSocketServer Success!");
     },
 
-    function (hSocket, oPacket) {
+    function (hSocket, sBuffer) {
+        var oPacket = JSON.parse(sBuffer);
         console.log(oPacket.MM);
         switch(oPacket.MM) {
             case "ConnectGateWay":
