@@ -76,6 +76,8 @@ function GateWay_RegGateWay(hSocket, oPacket) {
 
 //////////////////////////////////////////////
 //ws服务器流程
+var G_ClientNumber = 0;
+
 ws.CreateServer(cfg.AdaptServerPort_WS,
     function () {
         console.log("Timeshift AdaptWebSocketServer Success!");
@@ -89,19 +91,27 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
                 if(Pool_GateWay.length <= 0){
                     console.log("当前没有网关开启!");
                 }
-                var GW = Pool_GateWay[util.TSRandom(Pool_GateWay.length)];
+
+                var index = G_ClientNumber % Pool_GateWay.length;
+                var GW = Pool_GateWay[index];
 
                 var sPacket = {};
                 sPacket.MM = "ConnectGateWay";
                 sPacket.IP = GW.IP;
                 sPacket.Port = GW.Port;
                 ws.SendBuffer(hSocket, JSON.stringify(sPacket));
+
                 break;
         }
     },
 
     function (hSocket, reasonCode, description) {
+        console.log("客户端下线退出游戏!");
+        G_ClientNumber --;
+    },
 
+    function (hSocket) {
+        G_ClientNumber ++;
     }
 );
 

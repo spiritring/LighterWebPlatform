@@ -23,6 +23,9 @@ tcp.SendBuffer(hASSocket, JSON.stringify(sPacket));
 // 服务器启动完成.监听消息
 var G_GateWay = null;
 var G_HallSocket = null;
+var G_ClientNumber = 0;
+var G_ClientUUID = 0;
+var G_PoolClientSocket = {};
 
 function RunServer(iPORT, iUUID) {
     console.log(iPORT);
@@ -63,6 +66,17 @@ function RunServer(iPORT, iUUID) {
 
         function(hSocket, reasonCode, description) {
             console.log("close");
+            G_ClientNumber --;
+            delete G_PoolClientSocket[hSocket.UUID];
+        },
+
+        function(hSocket) {
+            console.log("new socket");
+            G_ClientNumber ++;
+            G_ClientUUID++;
+            hSocket.UUID = G_GateWay.UUID * 10000 + G_ClientUUID;
+            G_PoolClientSocket[hSocket.UUID] = hSocket;
+            console.log("new socket 网关客户数:" + G_ClientNumber + " UUID:" + hSocket.UUID);
         }
     );
 };

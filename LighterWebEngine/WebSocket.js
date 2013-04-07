@@ -3,7 +3,7 @@
 var websocket = require('websocket');
 var http = require('http');
 
-function CreateServer(port, funInit, funReceive, funClose) {
+function CreateServer(port, funInit, funReceive, funClose, funConnect) {
     var httpServer = http.createServer();
 
     httpServer.on('listening', function() {
@@ -13,6 +13,10 @@ function CreateServer(port, funInit, funReceive, funClose) {
     var wsServer = new websocket.server({
         httpServer: httpServer,
         maxReceivedMessageSize: 100000
+    });
+
+    wsServer.on('connect', function(hSocket){
+        funConnect(hSocket);
     });
 
     wsServer.on('request', function(request) {
