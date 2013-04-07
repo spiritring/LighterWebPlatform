@@ -1,0 +1,15 @@
+
+
+function TSRandom(Max){
+    return parseInt(Math.random()*Max);
+}
+
+
+
+
+
+
+module.exports = {
+    TSRandom: TSRandom
+};
+

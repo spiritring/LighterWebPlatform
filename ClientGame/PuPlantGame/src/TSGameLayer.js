@@ -3,7 +3,6 @@ cc.dumpConfig();
 var TSGameLayer = cc.Layer.extend({
 
     //Sys
-    ws : null, //WebSocket引擎
     sprite: null,
 
     //GameAS
@@ -68,7 +67,6 @@ var TSGameLayer = cc.Layer.extend({
 
 
     init:function () {
-        this.ws = null; //WebSocket引擎
         this.sprite = null;
 
         //GameAS
@@ -217,8 +215,6 @@ var TSGameLayer = cc.Layer.extend({
         }
 
         return true;
-
-//        this.ws.publish("TS", curPos.x.toString(), curPos.y.toString());
     },
 
     removeBall:function(pChoose) {

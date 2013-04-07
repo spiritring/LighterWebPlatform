@@ -8,64 +8,27 @@
             return null;
         }
 
-        var connection = new WebSocket('ws://' + host + ':' + port);
+        var hSocket = new WebSocket('ws://' + host + ':' + port);
 
-        connection.onmessage = function(message) {
-            try {
-                var parsed = JSON.parse(message.data);
-                switch (parsed.type) {
-                    case 'publish':
-                        if (messageListener) {
-                            messageListener(parsed);
-                        }
-                        break;
-                    case 'error':
-                        if (errorListener) {
-                            errorListener(parsed);
-                        }
-                        break;
-                    default:
-                        throw new Error('Unknown message type ' + parsed.type);
-                        break;
-                }
-            } catch (e) {
-                console.warn(e);
-                alert(e);
-            }
+        hSocket.onmessage = function(sBuffer) {
+            var parsed = JSON.parse(sBuffer.data);
+            messageListener(parsed);
         };
 
-        connection.publish = function(destination, x, y) {
-            connection.send(JSON.stringify({
-                type: 'publish',
-                destination: destination,
-                xx: x,
-                yy: y
-            }));
+        hSocket.onclose = function(code, reason, wasClean) {
+            alert("断开连接:" + reason + " Code:" + code);
+            errorListener();
         };
 
-        connection.subscribe = function(destination) {
-            connection.send(JSON.stringify({
-                type: 'subscribe',
-                destination: destination
-            }));
-        };
-
-        connection.unsubscribe = function(destination) {
-            connection.send(JSON.stringify({
-                type: 'unsubscribe',
-                destination: destination
-            }));
-        };
-
-        return connection;
+        return hSocket;
     }
 
     // initialize
-    WebSocketEngine = function(callbackMessage, callbackError) {
+    WebSocketEngine = function(sIP,iPort,funInit,callbackMessage, callbackError) {
         // connect to the local server
         var connection = connect(
-            'localhost',
-            8155,
+            sIP,
+            iPort,
             // message handler
             callbackMessage,
             // error handler
@@ -74,9 +37,13 @@
 
         // subscribe a topic
         connection.onopen = function() {
-            connection.subscribe('TSClient');
+            funInit();
         };
 
         return connection;
     };
+
+    SendBuffer = function(hSocket, sPacket) {
+        hSocket.send(JSON.stringify(sPacket));
+    }
 }())

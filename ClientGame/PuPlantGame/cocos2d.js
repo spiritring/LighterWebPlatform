@@ -38,6 +38,8 @@
 
         //SingleEngineFile:'',
         appFiles:[
+            //Config
+
             //Engine
             'engine/TSAStar.js',
             'engine/TSPoint.js',

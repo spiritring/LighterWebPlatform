@@ -64,7 +64,7 @@ function CreateClient(iPort, sHost, funInit, funReceive) {
 
     hSocket.on('error',function(error){
         console.log('error:'+ error);
-        hSocket.destory();
+        //hSocket.destory();
     });
 
     hSocket.on('close',function(){

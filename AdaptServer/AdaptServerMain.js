@@ -4,6 +4,7 @@
 var tcp = require("../LighterWebEngine/TCP");
 var ws = require("../LighterWebEngine/WebSocket");
 var cfg = require("../Common/Config");
+var util = require("../Common/TSUtil");
 var uuid = require("../LighterWebEngine/UUID");
 
 //网关池.用来分析.玩家与哪个网关相连
@@ -68,6 +69,8 @@ function GateWay_GetUUID(hSocket){
 function GateWay_RegGateWay(hSocket, oPacket) {
     var GW = new CGateWay(oPacket.Port, oPacket.IP, hSocket);
     Pool_GateWay.push(GW);
+
+    console.log("GateWay Regist Success! Port:" + oPacket.Port + " IP:" + oPacket.IP );
 };
 
 
@@ -79,12 +82,19 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
     },
 
     function (hSocket, oPacket) {
+        console.log(oPacket.MM);
         switch(oPacket.MM) {
-            case "publish":
+            case "ConnectGateWay":
+                if(Pool_GateWay.length <= 0){
+                    console.log("当前没有网关开启!");
+                }
+                var GW = Pool_GateWay[util.TSRandom(Pool_GateWay.length)];
+
                 var sPacket = {};
-                sPacket.MM = "publish";
-                sPacket.Text = oPacket.Text;
-                ws.SendBuffer(hSocket, JSON.stringify(oPacket));
+                sPacket.MM = "ConnectGateWay";
+                sPacket.IP = GW.IP;
+                sPacket.Port = GW.Port;
+                ws.SendBuffer(hSocket, JSON.stringify(sPacket));
                 break;
         }
     },
