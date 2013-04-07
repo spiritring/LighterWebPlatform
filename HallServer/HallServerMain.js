@@ -8,7 +8,7 @@ tcp.CreateServer(cfg.HallServerPort,
 
     function(hSocket, sBuffer) {
         var oPacket = JSON.parse(sBuffer);
-        console.log(oPacket.MM);
+        console.log(oPacket.MM + ":" +oPacket.UUID);
     },
 
     function(hSocket) {

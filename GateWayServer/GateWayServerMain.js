@@ -59,9 +59,9 @@ function RunServer(iPORT, iUUID) {
                 console.log("没有连接到大厅服务!");
                 return;
             }
-
-            tcp.SendBuffer(G_HallSocket,sBuffer);
-            console.log(sBuffer);
+            var oPacket = JSON.parse(sBuffer);
+            oPacket.UUID = hSocket.UUID;
+            tcp.SendBuffer(G_HallSocket,JSON.stringify(oPacket));
         },
 
         function(hSocket, reasonCode, description) {
