@@ -30,7 +30,10 @@ tcp.CreateServer(cfg.HallServerPort,
         console.log(oPacket.MM + ":" +oPacket.Order + ":" + oPacket.UUID);
         switch (oPacket.MM) {
             case "SysOrder": //用户命令行
-                ProcessOrder(oPacket.Order, parseInt(oPacket.UUID), hSocket);
+                HallSystem.ProcessOrder(oPacket.Order, parseInt(oPacket.UUID), hSocket);
+                break;
+            case "ClientOffLine":
+                HallSystem.ClientOffLine(parseInt(oPacket.UUID));
                 break;
         }
     },
@@ -44,7 +47,3 @@ tcp.CreateServer(cfg.HallServerPort,
     }
 );
 
-// 处理用户命令
-function ProcessOrder(sBuffer, iUUID, hSocket) {
-    HallSystem.ProcessOrder(sBuffer, iUUID, hSocket);
-}

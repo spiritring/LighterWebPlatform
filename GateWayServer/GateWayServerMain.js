@@ -75,6 +75,12 @@ function RunServer(iPORT, iUUID) {
             G_ClientNumber --;
             delete G_PoolClientSocket[hSocket.UUID];
             console.log("close 网关客户数:" + G_ClientNumber + " UUID:" + hSocket.UUID);
+
+            var sPacket = {
+                MM:"ClientOffLine",
+                UUID:hSocket.UUID
+            };
+            tcp.SendBuffer(G_HallSocket,JSON.stringify(sPacket));
         },
 
         function(hSocket) {

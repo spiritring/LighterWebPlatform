@@ -12,6 +12,15 @@ var def = require("./StructDefine");
 var Pool_User = {UUID:{}, NAME:{}};
 
 function HallSystem(){
+
+    this.ClientOffLine = function(iUUID) {
+        var name = Pool_User.UUID[iUUID].Name;
+        delete Pool_User.NAME[name];
+        delete Pool_User.UUID[iUUID];
+
+        console.log("玩家下线 名字:" + name + " UUID:" + iUUID);
+    }
+
     this.ProcessOrder = function (sBuffer, iUUID, hSocket) {
         var sOrder = sBuffer.split(":");
         switch(sOrder[0]) {
@@ -23,6 +32,16 @@ function HallSystem(){
                     password = sOrder[2];
 
                 //记录登陆玩家名字和UUID
+                if (name in Pool_User.NAME) {
+                    console.log("该名称已存在.不能重复登录!");
+                    return;
+                }
+
+                if (iUUID in Pool_User.UUID) {
+                    console.log("该UUID已存在.不能重复登录!");
+                    return;
+                }
+
                 Pool_User.UUID[iUUID] = new def.UserStruct(iUUID, name, password);
                 Pool_User.NAME[name] = Pool_User.UUID[iUUID];
 
