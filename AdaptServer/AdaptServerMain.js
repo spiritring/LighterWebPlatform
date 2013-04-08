@@ -65,8 +65,6 @@ function GateWay_GetUUID(hSocket){
     tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
 
     uuid.G_SetSU(hSocket, iUUID);
-
-    console.log(iPORT);
 };
 
 function GateWay_RegGateWay(hSocket, oPacket) {
@@ -98,7 +96,7 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
 
     function (hSocket, sBuffer) {
         var oPacket = JSON.parse(sBuffer);
-        console.log(oPacket.MM);
+        console.log("客户端消息接受:" + oPacket.MM);
         switch(oPacket.MM) {
             case "ConnectGateWay":
                 if(Pool_GateWay.length <= 0){

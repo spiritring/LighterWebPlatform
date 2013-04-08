@@ -27,9 +27,9 @@ tcp.CreateServer(cfg.HallServerPort,
 
     function(hSocket, sBuffer) {
         var oPacket = JSON.parse(sBuffer);
-        console.log(oPacket.MM + ":" +oPacket.Order + ":" + oPacket.UUID);
         switch (oPacket.MM) {
             case "SysOrder": //用户命令行
+                console.log(oPacket.MM + ":" +oPacket.Order + ":" + oPacket.UUID);
                 HallSystem.ProcessOrder(oPacket.Order, parseInt(oPacket.UUID), hSocket);
                 break;
             case "ClientOffLine":
