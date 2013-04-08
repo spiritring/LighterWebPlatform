@@ -3,14 +3,41 @@
 <head>
     <meta charset="utf-8">
     <title>TimeShiftGame</title>
+    <style>
+        div#output {
+            border: 1px solid #000;
+            width: 960px;
+            height: 450px;
+            overflow: auto;
+            background-color: #333;
+            color: #6cf;
+        }
+
+        strong {
+            color: #f66;
+        }
+
+        input#input {
+            border: 1px solid #000;
+            width: 640px;
+        }
+
+        button {
+            border: 1px solid #000;
+            width: 100px;
+        }
+    </style>
     <script>
 
         var input = null;
+        var output = null;
 
         // initialize
         window.onload = function() {
 
             input = document.getElementById('input');
+            output = document.getElementById('output');
+
 
             G_hSocket = WebSocketEngine("127.0.0.1", 9901,
                     function(){
@@ -67,19 +94,24 @@
             sPacket.MM = "SysOrder";
             sPacket.Order = input.value;
             SendBuffer(G_hSocket, sPacket);
+            output.innerHTML += ('<strong>Order: </strong>' + input.value + '<br>\n');
+        };
+
+        function _clear(){
+            output.innerHTML = '';
         };
 
     </script>
 </head>
-<body style="padding:0; margin: 0; background: #000;">
-<div style="width: 320px;height: 480px;margin: 0 auto;">
+<body>
+<div style="width: 320px; height: 480px;">
     <canvas id="gameCanvas" width="320" height="480" ></canvas>
 </div>
-<div id="cou" style="width:320px;margin: 0 auto;"></div>
-
 
 <input type="text" id="input">
 <button id="send" onclick="_send()">Send</button>
+<button id="clear" onclick="_clear()">Clear</button>
+<div id="output"></div>
 
 </body>
 </html>

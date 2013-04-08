@@ -1,6 +1,7 @@
 var tcp = require("../LighterWebEngine/TCP");
 var cfg = require("../Common/Config");
 
+// 重启流程保护: 通知AS, AS通知GWS, 重新连接HS.
 var G_ASSocket = tcp.CreateClient(cfg.AdaptServerPort, cfg.AdaptServerPort,
     function (){
         // 给AS发请求.然后AS发通知给网关.重新连接HS
@@ -15,6 +16,7 @@ var G_ASSocket = tcp.CreateClient(cfg.AdaptServerPort, cfg.AdaptServerPort,
     }
 );
 
+// 启动大厅服务器
 tcp.CreateServer(cfg.HallServerPort,
     function() {
         console.log("Timeshift HallTCPServer Success!");
@@ -24,7 +26,7 @@ tcp.CreateServer(cfg.HallServerPort,
         var oPacket = JSON.parse(sBuffer);
         console.log(oPacket.MM + ":" +oPacket.Order);
         switch (oPacket.MM) {
-            case "SysOrder":
+            case "SysOrder": //用户命令行
                 ProcessOrder(oPacket.Order, parseInt(oPacket.UUID), hSocket);
                 break;
         }
