@@ -24,7 +24,7 @@ tcp.CreateServer(cfg.HallServerPort,
 
     function(hSocket, sBuffer) {
         var oPacket = JSON.parse(sBuffer);
-        console.log(oPacket.MM + ":" +oPacket.Order);
+        console.log(oPacket.MM + ":" +oPacket.Order + ":" + oPacket.UUID);
         switch (oPacket.MM) {
             case "SysOrder": //用户命令行
                 ProcessOrder(oPacket.Order, parseInt(oPacket.UUID), hSocket);

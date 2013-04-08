@@ -44,19 +44,18 @@ tcp.CreateServer(cfg.AdaptServerPort,
                 break;
             }
         }
-        console.log("Close = " + UID + " Port = " + iPort + " Length = " + Pool_GateWay.length);
+        console.log("服务器关闭 UUID = " + UID + " 如果是网关断开的端口 = " + iPort + " 目前AS上网关数量 = " + Pool_GateWay.length);
     },
 
     function(hSocket) {
-
+        var iUUID = uuid.G_UUID();
+        hSocket.UUID = iUUID;
     }
 );
 
 function GateWay_GetUUID(hSocket){
-    var iUUID = uuid.G_UUID();
+    var iUUID = hSocket.UUID;
     var iPORT = uuid.G_PORT() + cfg.GateWayServerPort;
-
-    hSocket.UUID = iUUID;
     hSocket.PORT= iPORT;
 
     var sPacket = {};
