@@ -5,8 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" afterPath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HallServer/HallServerMain.js" afterPath="$PROJECT_DIR$/HallServer/HallServerMain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HallServer/HallSystem.js" afterPath="$PROJECT_DIR$/HallServer/HallSystem.js" />
     </list>
     <ignored path="LighterWebPlatform.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,7 +33,7 @@
     <file path="/TSSettingLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365388586973" ignored="false" />
     <file path="/ChatClient.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365389183657" ignored="false" />
     <file path="/StructDefine.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365397615460" ignored="false" />
-    <file path="/HallSystem.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365400202291" ignored="false" />
+    <file path="/HallSystem.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365401162153" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,16 +146,16 @@
       <file leaf-file-name="HallServerMain.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="9" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.0">
+            <state line="26" column="0" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdaptServerMain.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AdaptServerMain.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="103" column="17" selection-start="2868" selection-end="2868" vertical-scroll-proportion="0.53763443">
+            <state line="105" column="65" selection-start="2935" selection-end="2935" vertical-scroll-proportion="-11.52">
               <folding />
             </state>
           </provider>
@@ -171,10 +170,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="HallSystem.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="HallSystem.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HallServer/HallSystem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="31" selection-start="937" selection-end="937" vertical-scroll-proportion="0.0">
+            <state line="16" column="46" selection-start="428" selection-end="428" vertical-scroll-proportion="0.6204082">
               <folding />
             </state>
           </provider>
@@ -258,9 +257,9 @@
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSMainMenu.js" />
         <option value="$PROJECT_DIR$/HallServer/StructDefine.js" />
         <option value="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
-        <option value="$PROJECT_DIR$/HallServer/HallSystem.js" />
         <option value="$PROJECT_DIR$/HallServer/HallServerMain.js" />
         <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
+        <option value="$PROJECT_DIR$/HallServer/HallSystem.js" />
       </list>
     </option>
   </component>
@@ -422,6 +421,9 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value="SHOW_INHERITED" />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" name="Default" comment="" />
@@ -457,14 +459,14 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293944" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24982357" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.27381793" sideWeight="0.6890547" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.151729" sideWeight="0.6890547" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31094527" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20395201" sideWeight="0.6890547" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31094527" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20395201" sideWeight="0.6890547" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293944" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -636,23 +638,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HallServer/HallSystem.js">
+    <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="31" selection-start="937" selection-end="937" vertical-scroll-proportion="0.0">
+        <state line="105" column="65" selection-start="2935" selection-end="2935" vertical-scroll-proportion="-11.52">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="9" selection-start="1092" selection-end="1092" vertical-scroll-proportion="0.0">
+        <state line="26" column="0" selection-start="621" selection-end="621" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
+    <entry file="file://$PROJECT_DIR$/HallServer/HallSystem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="17" selection-start="2868" selection-end="2868" vertical-scroll-proportion="0.53763443">
+        <state line="16" column="46" selection-start="428" selection-end="428" vertical-scroll-proportion="0.6204082">
           <folding />
         </state>
       </provider>

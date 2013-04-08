@@ -18,7 +18,7 @@ function HallSystem(){
         delete Pool_User.NAME[name];
         delete Pool_User.UUID[iUUID];
 
-        console.log("玩家下线 名字:" + name + " UUID:" + iUUID);
+        console.log("玩家下线 名字:" + name + " UUID:" + iUUID + " 大厅人数:" + Object.keys(Pool_User.UUID).length);
     }
 
     this.ProcessOrder = function (sBuffer, iUUID, hSocket) {
@@ -42,20 +42,24 @@ function HallSystem(){
                     return;
                 }
 
-                Pool_User.UUID[iUUID] = new def.UserStruct(iUUID, name, password);
-                Pool_User.NAME[name] = Pool_User.UUID[iUUID];
-
-                console.log("大厅的玩家数量:" + Object.keys(Pool_User.UUID).length);
-
-                //通知玩家登陆成功.
-                var sPacket = {
-                    MM : "LoginSuccess",
-                    UUID : iUUID
-                };
-                tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
+                this.Msg_Login(iUUID, name, password, hSocket);
 
                 break;
         }
+    }
+
+    this.Msg_Login = function(iUUID, sName, sPassword, hSocket){
+        Pool_User.UUID[iUUID] = new def.UserStruct(iUUID, sName, sPassword);
+        Pool_User.NAME[sName] = Pool_User.UUID[iUUID];
+
+        console.log("大厅的玩家数量:" + Object.keys(Pool_User.UUID).length);
+
+        //通知玩家登陆成功.
+        var sPacket = {
+            MM : "LoginSuccess",
+            UUID : iUUID
+        };
+        tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
     }
 
 };
