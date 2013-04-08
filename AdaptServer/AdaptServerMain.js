@@ -1,11 +1,8 @@
-// 主要职责.分配ID.路由登陆.负载平衡网关.
-// 启动服务器时候.先启动该服务器.之后其他的服都会请求该分配服.分配端口号之类的操作.
-
-var tcp = require("../LighterWebEngine/TCP");
-var ws = require("../LighterWebEngine/WebSocket");
 var cfg = require("../Common/Config");
 var util = require("../Common/TSUtil");
 var uuid = require("../LighterWebEngine/UUID");
+var tcp = require("../LighterWebEngine/TCP");
+var ws = require('../LighterWebEngine/WebSocket');
 
 //网关池.用来分析.玩家与哪个网关相连
 var Pool_GateWay = [];
@@ -28,6 +25,9 @@ tcp.CreateServer(cfg.AdaptServerPort,
                 break;
             case "GW_RegGateWay":
                 GateWay_RegGateWay(hSocket, oPacket);
+                break;
+            case "HS_ConnectHall":
+                Hall_ConnectHall();
                 break;
         };
     },
@@ -77,6 +77,16 @@ function GateWay_RegGateWay(hSocket, oPacket) {
     console.log("GateWay Regist Success! Port:" + oPacket.Port + " IP:" + oPacket.IP );
 };
 
+function Hall_ConnectHall() {
+    for (var i = 0 ; i < Pool_GateWay.length ; i++) {
+        var GW = Pool_GateWay[i];
+
+        var sPacket = {
+            MM:"HS_ConnectHall"
+        };
+        tcp.SendBuffer(GW.Socket, JSON.stringify(sPacket));
+    }
+};
 
 //////////////////////////////////////////////
 //ws服务器流程

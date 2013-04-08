@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>TimeShiftGame</title>
     <script>
+
         var input = null;
 
         // initialize
@@ -36,21 +37,18 @@
 
             );
 
-
-
             function ConnectGateWay(sIP, iPORT) {
-
-
                 G_hSocket = WebSocketEngine(sIP, iPORT,
                         function(){
 
                         },
 
                         function(oPacket){
-                            switch(oPacket.MM)
-                            {
+                            if (G_SceneState == G_SceneType.TSMainMenuLayer)
+                                TSMainMenu.MessageProc(oPacket);
 
-                            }
+                            if (G_SceneState == G_SceneType.TSGameLayer)
+                                TSGameLayer.MessageProc(oPacket);
                         },
 
                         function(){
@@ -66,8 +64,8 @@
 
         function _send(){
             var sPacket = {};
-            sPacket.MM = "LoginGame";
-            sPacket.Name = input.value;
+            sPacket.MM = "SysOrder";
+            sPacket.Order = input.value;
             SendBuffer(G_hSocket, sPacket);
         };
 
@@ -80,11 +78,10 @@
 <div id="cou" style="width:320px;margin: 0 auto;"></div>
 
 
-
 <input type="text" id="input">
 <button id="send" onclick="_send()">Send</button>
 
 </body>
 </html>
 
-        <script src="cocos2d.js"> </script>
+<script src="cocos2d.js"> </script>

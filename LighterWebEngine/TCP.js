@@ -1,4 +1,3 @@
-"use strict";
 
 var net = require('net');
 var ExBuffer = require('ExBuffer');
@@ -59,7 +58,8 @@ function CreateClient(iPort, sHost, funInit, funReceive) {
 
     var exBuffer = new ExBuffer();
     var hSocket = net.connect(iPort, sHost, function() {
-        funInit();
+        if (funInit != null)
+            funInit();
     });
 
     hSocket.on('data', function(data) {
@@ -79,7 +79,8 @@ function CreateClient(iPort, sHost, funInit, funReceive) {
     exBuffer.on('data', function(buffer) {
         var bytebuf = new ByteBuffer(buffer);
         var resArr = bytebuf.string().unpack();
-        funReceive(resArr[0]);
+        if (funReceive != null)
+            funReceive(resArr[0]);
     });
 
     return hSocket;

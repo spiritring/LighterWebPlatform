@@ -86,6 +86,8 @@ var TSGameLayer = cc.Layer.extend({
 
         var bRet = false;
         if (this._super()) {
+            G_SceneState = G_SceneType.TSGameLayer;
+
             var sp = cc.Sprite.create(s_background);
             sp.setPosition(cc.p(winSize.width / 2, winSize.height / 2));
             this.addChild(sp, 0, 1000);
@@ -591,5 +593,9 @@ TSGameLayer.scene = function () {
     scene.addChild(layer);
     return scene;
 };
+
+TSGameLayer.MessageProc = function(oPacket) {
+
+}
 
 

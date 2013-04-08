@@ -12,6 +12,19 @@ var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function
             var iUUID = parseInt(oPacket.UUID);
             RunServer(iPORT, iUUID);
             break;
+        case "HS_ConnectHall":
+            //重新连接大厅
+            console.log("重新连接大厅. 成功!");
+            G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerPort,
+                function() {
+
+                },
+
+                function(sBuffer) {
+
+                }
+            );
+            break;
     };
 });
 

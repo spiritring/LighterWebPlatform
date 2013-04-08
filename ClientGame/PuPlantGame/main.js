@@ -57,4 +57,14 @@ var cocos2dApp = cc.Application.extend({
         return true;
     }
 });
+
+G_SceneType = {
+    TSMainMenuLayer:0,
+    TSAboutLayer:1,
+    TSGameLayer:2,
+    TSSettingLayer:4
+};
+
+G_SceneState = G_SceneType.TSMainMenuLayer;
+
 var myApp = new cocos2dApp(TSMainMenu.scene);

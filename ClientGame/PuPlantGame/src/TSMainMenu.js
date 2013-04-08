@@ -4,6 +4,9 @@ var TSMainMenu = cc.Layer.extend({
     init:function() {
         var bRet = false;
         if (this._super()) {
+
+            G_SceneState = G_SceneType.TSMainMenuLayer;
+
             var sp = cc.Sprite.create(s_loading);
             sp.setAnchorPoint(cc.p(0, 0));
             this.addChild(sp, 0, 1);
@@ -89,3 +92,7 @@ TSMainMenu.scene = function () {
     scene.addChild(layer);
     return scene;
 };
+
+TSMainMenu.MessageProc = function(oPacket) {
+
+}

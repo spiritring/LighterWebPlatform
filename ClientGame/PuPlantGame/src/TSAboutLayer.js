@@ -2,6 +2,9 @@ var TSAboutLayer = cc.Layer.extend({
     init:function () {
         var bRet = false;
         if (this._super()) {
+
+            G_SceneState = G_SceneType.TSAboutLayer;
+
             var sp = cc.Sprite.create(s_loading);
             sp.setAnchorPoint(cc.p(0,0));
             this.addChild(sp, 0, 1);
