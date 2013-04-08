@@ -94,5 +94,5 @@ TSMainMenu.scene = function () {
 };
 
 TSMainMenu.MessageProc = function(oPacket) {
-
+    G_Output.innerHTML += ('<strong>登陆成功!</strong>' + oPacket.UUID + '<br>\n');
 }

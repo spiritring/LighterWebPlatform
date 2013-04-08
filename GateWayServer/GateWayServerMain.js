@@ -19,10 +19,7 @@ var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function
                 function() {
 
                 },
-
-                function(sBuffer) {
-
-                }
+                HallMessageRoute
             );
             break;
     };
@@ -60,10 +57,7 @@ function RunServer(iPORT, iUUID) {
                 function() {
 
                 },
-
-                function(sBuffer) {
-
-                }
+                HallMessageRoute
             );
         },
 
@@ -92,3 +86,12 @@ function RunServer(iPORT, iUUID) {
         }
     );
 };
+
+function HallMessageRoute(sBuffer) {
+    var oPacket = JSON.parse(sBuffer);
+
+    var iUUID = oPacket.UUID;
+    var hSocket = G_PoolClientSocket[iUUID];
+
+    ws.SendBuffer(hSocket, JSON.stringify(oPacket));
+}

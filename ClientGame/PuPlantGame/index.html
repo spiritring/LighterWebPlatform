@@ -30,13 +30,13 @@
     <script>
 
         var input = null;
-        var output = null;
+        G_Output = null;
 
         // initialize
         window.onload = function() {
 
             input = document.getElementById('input');
-            output = document.getElementById('output');
+            G_Output = document.getElementById('output');
 
 
             G_hSocket = WebSocketEngine("127.0.0.1", 9901,
@@ -94,11 +94,11 @@
             sPacket.MM = "SysOrder";
             sPacket.Order = input.value;
             SendBuffer(G_hSocket, sPacket);
-            output.innerHTML += ('<strong>Order: </strong>' + input.value + '<br>\n');
+            G_Output.innerHTML += ('<strong>命令发送: </strong>' + input.value + '<br>\n');
         };
 
         function _clear(){
-            output.innerHTML = '';
+            G_Output.innerHTML = '';
         };
 
     </script>
