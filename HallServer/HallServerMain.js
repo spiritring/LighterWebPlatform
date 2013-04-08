@@ -1,7 +1,8 @@
 var tcp = require("../LighterWebEngine/TCP");
 var cfg = require("../Common/Config");
+var hs = require("./HallSystem");
 
-var Pool_GateWay = {};
+var HallSystem = new hs.HallSystem();
 
 // 重启流程保护: 通知AS, AS通知GWS, 重新连接HS.
 var G_ASSocket = tcp.CreateClient(cfg.AdaptServerPort, cfg.AdaptServerPort,
@@ -45,28 +46,5 @@ tcp.CreateServer(cfg.HallServerPort,
 
 // 处理用户命令
 function ProcessOrder(sBuffer, iUUID, hSocket) {
-    var sOrder = sBuffer.split(":");
-    switch(sOrder[0]) {
-        case "Login":
-        case "login":
-            var name = sOrder[1];
-            var password = 0;
-            if(sOrder.length > 2)
-                password = sOrder[2];
-
-            hSocket.UUID = iUUID;
-
-            //记录登陆玩家名字和UUID
-            console.log(name + ":" + iUUID);
-
-            //通知玩家登陆成功.
-            var sPacket = {
-                MM : "LoginSuccess",
-                UUID : iUUID
-            };
-            tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
-
-            break;
-    }
-
+    HallSystem.ProcessOrder(sBuffer, iUUID, hSocket);
 }
