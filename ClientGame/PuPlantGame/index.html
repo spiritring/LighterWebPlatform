@@ -71,11 +71,25 @@
                         },
 
                         function(oPacket){
-                            if (G_SceneState == G_SceneType.TSMainMenuLayer)
-                                TSMainMenu.MessageProc(oPacket);
-
-                            if (G_SceneState == G_SceneType.TSGameLayer)
+                            if (G_SceneState == G_SceneType.TSGameLayer) {
                                 TSGameLayer.MessageProc(oPacket);
+                                return;
+                            }
+
+                            if (G_SceneState == G_SceneType.TSMainMenuLayer) {
+                                TSMainMenu.MessageProc(oPacket);
+                                return;
+                            }
+
+                            if (G_SceneState == G_SceneType.TSHallLayer) {
+                                TSHallLayer.MessageProc(oPacket);
+                                return;
+                            }
+
+                            if (G_SceneState == G_SceneType.TSRoomLayer) {
+                                TSRoomLayer.MessageProc(oPacket);
+                                return;
+                            }
                         },
 
                         function(){

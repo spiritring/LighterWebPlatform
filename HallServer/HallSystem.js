@@ -10,6 +10,16 @@ var cfg = require("../Common/Config");
 var def = require("./StructDefine");
 
 var Pool_User = {UUID:{}, NAME:{}};
+var G_RoomIDAdapt = 0;
+
+
+var Pool_Room = {};
+function CRoom(){
+    this.ClientArr = {};
+    this.RoomID = 0;
+    this.LeaderID = 0;
+    this.LeaderName = "";
+};
 
 function HallSystem(){
 
@@ -20,11 +30,13 @@ function HallSystem(){
             return;
         }
 
-        var name = Pool_User.UUID[iUUID].Name;
-        delete Pool_User.NAME[name];
-        delete Pool_User.UUID[iUUID];
+        if(iUUID in Pool_User.UUID){
+            var name = Pool_User.UUID[iUUID].Name;
+            delete Pool_User.NAME[name];
+            delete Pool_User.UUID[iUUID];
 
-        console.log("玩家下线 名字:" + name + " UUID:" + iUUID + " 大厅人数:" + Object.keys(Pool_User.UUID).length);
+            console.log("玩家下线 名字:" + name + " UUID:" + iUUID + " 大厅人数:" + Object.keys(Pool_User.UUID).length);
+        }
     }
 
     this.ProcessOrder = function (sBuffer, iUUID, hSocket) {
@@ -51,8 +63,14 @@ function HallSystem(){
                 this.Msg_Login(iUUID, name, password, hSocket);
 
                 break;
+            case "CreateRoom":
+                this.Msg_CreateRoom(iUUID, hSocket);
+                break;
+            case "GetRoomList":
+                this.Msg_GetRoomList(iUUID, hSocket);
+                break;
         }
-    }
+    };
 
     this.Msg_Login = function(iUUID, sName, sPassword, hSocket){
         Pool_User.UUID[iUUID] = new def.UserStruct(iUUID, sName, sPassword);
@@ -67,7 +85,33 @@ function HallSystem(){
             NAME : sName
         };
         tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
-    }
+    };
+
+    this.Msg_CreateRoom = function(iUUID, hSocket){
+        var room = new CRoom();
+        room.RoomID = ++G_RoomIDAdapt;
+        room.ClientArr[iUUID] = Pool_User.UUID[iUUID].Name;
+        room.LeaderID = iUUID;
+        room.LeaderName = Pool_User.UUID[iUUID].Name;
+        Pool_Room[room.RoomID] = room;
+
+        var sName = Pool_User.UUID[iUUID].Name;
+        var sPacket = {
+            MM: "CreateRoom",
+            UUID: iUUID,
+            NAME: sName,
+            OK: true
+        };
+        tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
+    };
+
+    this.Msg_GetRoomList = function(iUUID, hSocket){
+        var sPacket = {};
+        sPacket.UUID = iUUID;
+        sPacket.MM = "GetRoomList";
+        sPacket.Data = Pool_Room;
+        tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
+    };
 
 };
 

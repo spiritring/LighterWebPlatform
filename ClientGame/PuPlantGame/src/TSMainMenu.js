@@ -74,18 +74,12 @@ var TSMainMenu = cc.Layer.extend({
 
 
     onCreateRoom:function(){
-        var sPacket = {};
-        sPacket.MM = "SysOrder";
-        sPacket.Order = "CreateRoom:";
-        SendBuffer(G_hSocket, sPacket);
-
         var scene = cc.Scene.create();
         scene.addChild(TSHallLayer.create());
         cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
     },
 
     onJoinRoom:function(){
-
         var scene = cc.Scene.create();
         scene.addChild(TSRoomLayer.create());
         cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
@@ -140,4 +134,5 @@ TSMainMenu.MessageProc = function(oPacket) {
     G_UserInfo.UUID = oPacket.UUID;
 
     myApp = new cocos2dApp(TSMainMenu.scene);
+
 }
