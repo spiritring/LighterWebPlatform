@@ -2,6 +2,8 @@ var TSHallLayer = cc.Layer.extend({
 
     menu:null,
 
+    subMenu:null,
+
     init:function () {
         var bRet = false;
         if (this._super()) {
@@ -18,16 +20,25 @@ var TSHallLayer = cc.Layer.extend({
             var back = cc.MenuItemLabel.create(label, this.onBackCallback);
             back.setScale(0.8);
 
-            this.menu = cc.Menu.create(back);
-            this.menu.alignItemsInColumns(1);
-            this.addChild(this.menu);
-
             var cp_back = back.getPosition();
-            cp_back.y -= 50.0;
+            cp_back.y -= 175.0;
             back.setPosition(cp_back);
 
-            bRet = true;
+            label = cc.LabelTTF.create("Enter Game", "Arial", 20);
+            var enter = cc.MenuItemLabel.create(label, this.onEnterGame);
+            enter.setScale(0.8);
 
+            cp_back = enter.getPosition();
+            cp_back.y -= 200.0;
+            enter.setPosition(cp_back);
+
+            this.menu = cc.Menu.create(back, enter);
+            this.addChild(this.menu);
+
+            this.subMenu = cc.Menu.create();
+            this.addChild(this.subMenu);
+
+            bRet = true;
 
             var sPacket = {
                 MM:"SysOrder",
@@ -38,6 +49,11 @@ var TSHallLayer = cc.Layer.extend({
 
         return bRet;
     },
+
+    onEnterGame:function(pSender) {
+
+    },
+
     onBackCallback:function (pSender) {
         var scene = cc.Scene.create();
         scene.addChild(TSMainMenu.create());
@@ -49,20 +65,47 @@ var TSHallLayer = cc.Layer.extend({
         };
         SendBuffer(G_hSocket, sPacket);
     },
+
     onMessageProc:function(oPacket){
 
         switch (oPacket.MM) {
             case "CreateRoom":
                 var sName = oPacket.NAME;
 
-                cc.MenuItemFont.setFontName("Arial");
-                cc.MenuItemFont.setFontSize(26);
                 var label = cc.LabelTTF.create("MainPlayer:"+sName, "Arial", 20);
                 var back = cc.MenuItemLabel.create(label);
                 back.setScale(0.8);
 
+                var cp_back = back.getPosition();
+                cp_back.y = 200;
+                back.setPosition(cp_back);
+
                 this.menu.addChild(back);
                 break;
+
+            case "JoinRoom":
+                var room = oPacket.Data;
+
+                this.subMenu.removeAllChildren(true);
+
+                var index = 1;
+                for (var i in room.ClientArr) {
+                    var sName = room.ClientArr[i];
+                    var iUUID = i;
+
+                    var label = cc.LabelTTF.create("Player:"+sName, "Arial", 20);
+                    var back = cc.MenuItemLabel.create(label);
+                    back.setScale(0.8);
+
+                    var cp_back = back.getPosition();
+                    cp_back.y = 175 - 25 * index++;
+                    back.setPosition(cp_back);
+
+                    this.subMenu.addChild(back);
+                }
+
+                break;
+
         }
     }
 });

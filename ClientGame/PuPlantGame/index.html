@@ -37,7 +37,7 @@
 
             input = document.getElementById('input');
             G_Output = document.getElementById('output');
-
+            input.value = "login:a";
 
             G_hSocket = WebSocketEngine("127.0.0.1", 9901,
                     function(){
@@ -88,6 +88,11 @@
 
                             if (G_SceneState == G_SceneType.TSRoomLayer) {
                                 TSRoomLayer.MessageProc(oPacket);
+                                return;
+                            }
+
+                            if (G_SceneState == G_SceneType.TSJoinLayer) {
+                                TSJoinLayer.MessageProc(oPacket);
                                 return;
                             }
                         },

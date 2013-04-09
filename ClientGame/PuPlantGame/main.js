@@ -64,7 +64,8 @@ G_SceneType = {
     TSGameLayer:2,
     TSHallLayer:3,
     TSSettingLayer:4,
-    TSRoomLayer:5
+    TSRoomLayer:5,
+    TSJoinLayer:6
 };
 
 G_SceneState = G_SceneType.TSMainMenuLayer;

@@ -14,7 +14,6 @@ var G_RoomIDAdapt = 0;
 
 
 var Pool_Room = {};
-
 function CRoom(){
     this.ClientArr = {};
     this.RoomID = 0;
@@ -22,7 +21,18 @@ function CRoom(){
     this.LeaderName = "";
 };
 
+var Pool_GateWaySocket = {};
+
 function HallSystem(){
+
+    this.RegGateWay = function(iUUID, hSocket) {
+        Pool_GateWaySocket[iUUID] = hSocket;
+    };
+
+    this.SendBuffer = function(iUUID, sPacket) {
+        var iGWUUID = iUUID % 1000;
+        tcp.SendBuffer(Pool_GateWaySocket[iGWUUID], JSON.stringify(sPacket));
+    }
 
     this.ClientOffLine = function(iUUID) {
 
@@ -40,9 +50,10 @@ function HallSystem(){
 
             console.log("玩家下线 名字:" + name + " UUID:" + iUUID + " 大厅人数:" + Object.keys(Pool_User.UUID).length);
         }
-    }
+    };
 
     this.ProcessOrder = function (sBuffer, iUUID, hSocket) {
+
         var sOrder = sBuffer.split(":");
         switch(sOrder[0]) {
             case "Login":
@@ -64,8 +75,15 @@ function HallSystem(){
                 }
 
                 this.Msg_Login(iUUID, name, password, hSocket);
+                return;
+        }
 
-                break;
+
+        if (!(iUUID in Pool_User.UUID)){
+            return;
+        }
+
+        switch(sOrder[0]) {
             case "CreateRoom":
                 this.Msg_CreateRoom(iUUID, hSocket);
                 break;
@@ -75,6 +93,26 @@ function HallSystem(){
             case "RemoveRoom":
                 this.Msg_RemoveRoom(iUUID);
                 break;
+            case "JoinRoom":
+                var iRoomID = parseInt(sOrder[1]);
+                this.Msg_JoinRoom(iUUID, iRoomID);
+                break;
+        }
+    };
+
+    this.Msg_JoinRoom = function(iUUID, iRoomID) {
+
+        if (iRoomID in Pool_Room) {
+            var room = Pool_Room[iRoomID];
+            room.ClientArr[iUUID] = Pool_User.UUID[iUUID].Name;
+
+            for (var i in room.ClientArr) {
+                var sPacket = {};
+                sPacket.UUID = i;
+                sPacket.MM = "JoinRoom";
+                sPacket.Data = room;
+                this.SendBuffer(sPacket.UUID, sPacket);
+            }
         }
     };
 

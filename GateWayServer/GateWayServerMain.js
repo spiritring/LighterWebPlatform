@@ -16,9 +16,7 @@ var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function
             //重新连接大厅
             console.log("重新连接大厅. 成功!");
             G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerPort,
-                function() {
-
-                },
+                HallConnectSuccess,
                 HallMessageRoute
             );
             break;
@@ -54,9 +52,7 @@ function RunServer(iPORT, iUUID) {
 
             //连接大厅
             G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerPort,
-                function() {
-
-                },
+                HallConnectSuccess,
                 HallMessageRoute
             );
         },
@@ -86,18 +82,32 @@ function RunServer(iPORT, iUUID) {
         function(hSocket) {
             G_ClientNumber ++;
             G_ClientUUID++;
-            hSocket.UUID = G_ClientUUID * 100 + G_GateWay.UUID;
+            hSocket.UUID = G_ClientUUID * 1000 + G_GateWay.UUID;
             G_PoolClientSocket[hSocket.UUID] = hSocket;
             console.log("newSocket 网关客户数:" + G_ClientNumber + " UUID:" + hSocket.UUID);
         }
     );
 };
 
+function HallConnectSuccess() {
+    var iUUID = G_GateWay.UUID;
+    var sPacket = {
+        MM:"RegGateWay",
+        UUID:iUUID
+    };
+    tcp.SendBuffer(G_HallSocket, JSON.stringify(sPacket));
+};
+
 function HallMessageRoute(sBuffer) {
     var oPacket = JSON.parse(sBuffer);
 
     var iUUID = oPacket.UUID;
+
+    if (!(iUUID in G_PoolClientSocket)){
+        console.log("网关获取了 错误的玩家UUID:" + iUUID + " G_GateWay.UUID:" + G_GateWay.UUID);
+        return;
+    }
     var hSocket = G_PoolClientSocket[iUUID];
 
     ws.SendBuffer(hSocket, JSON.stringify(oPacket));
-}
+};

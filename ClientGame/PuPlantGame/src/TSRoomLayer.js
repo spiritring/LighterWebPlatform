@@ -46,6 +46,15 @@ var TSRoomLayer = cc.Layer.extend({
     onRoomCallback:function(pSender) {
         var label = pSender.getLabel();
         var RoomID = label.RoomID;
+
+        var sPacket = {};
+        sPacket.MM = "SysOrder";
+        sPacket.Order = "JoinRoom:" + RoomID;
+        SendBuffer(G_hSocket, sPacket);
+
+        var scene = cc.Scene.create();
+        scene.addChild(TSJoinLayer.create());
+        cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
     },
 
     onMessageProc:function (oPacket) {
