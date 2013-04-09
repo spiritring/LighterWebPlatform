@@ -1,5 +1,8 @@
 
 var TSJoinLayer = cc.Layer.extend({
+
+    subMenu: null,
+
     init:function () {
         var bRet = false;
         if (this._super()) {
@@ -17,11 +20,13 @@ var TSJoinLayer = cc.Layer.extend({
             back.setScale(0.8);
 
             var menu = cc.Menu.create(back);
-            menu.alignItemsInColumns(1);
             this.addChild(menu);
 
+            this.subMenu = cc.Menu.create();
+            this.addChild(this.subMenu);
+
             var cp_back = back.getPosition();
-            cp_back.y -= 50.0;
+            cp_back.y = 200.0;
             back.setPosition(cp_back);
 
             bRet = true;
@@ -37,7 +42,29 @@ var TSJoinLayer = cc.Layer.extend({
     },
 
     onMessageProc:function (oPacket) {
+        switch(oPacket.MM) {
+            case "JoinRoom":
+                var room = oPacket.Data;
 
+                this.subMenu.removeAllChildren(true);
+
+                var index = 1;
+                for (var i in room.ClientArr) {
+                    var sName = room.ClientArr[i];
+
+                    var label = cc.LabelTTF.create("Player:"+sName, "Arial", 20);
+                    var back = cc.MenuItemLabel.create(label);
+                    back.setScale(0.8);
+
+                    var cp_back = back.getPosition();
+                    cp_back.y = 175 - 25 * index++;
+                    back.setPosition(cp_back);
+
+                    this.subMenu.addChild(back);
+                }
+
+                break;
+        }
     }
 });
 

@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" afterPath="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HallServer/HallServerMain.js" afterPath="$PROJECT_DIR$/HallServer/HallServerMain.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HallServer/HallSystem.js" afterPath="$PROJECT_DIR$/HallServer/HallSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/cocos2d.js" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/cocos2d.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/index.html" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/main.js" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" />
     </list>
     <ignored path="LighterWebPlatform.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,7 +37,7 @@
     <file path="$PROJECT_DIR$/../NodeJSTest/main.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365421822752" ignored="false" />
     <file path="/TSHallLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365507240330" ignored="false" />
     <file path="/TSRoomLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365508818134" ignored="false" />
-    <file path="/TSJoinLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365505568725" ignored="false" />
+    <file path="/TSJoinLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365511282484" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,10 +147,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TSHallLayer.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TSHallLayer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="53" selection-start="2453" selection-end="2453" vertical-scroll-proportion="0.5245684">
+            <state line="37" column="0" selection-start="1113" selection-end="1198" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TSJoinLayer.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="25" column="40" selection-start="762" selection-end="762" vertical-scroll-proportion="-0.30278885">
               <folding />
             </state>
           </provider>
@@ -237,15 +237,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="39" column="36" selection-start="836" selection-end="836" vertical-scroll-proportion="27.142857">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -273,13 +264,13 @@
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSMainMenu.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/cocos2d.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/main.js" />
-        <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" />
         <option value="$PROJECT_DIR$/HallServer/HallServerMain.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/index.html" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js" />
         <option value="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
         <option value="$PROJECT_DIR$/HallServer/HallSystem.js" />
+        <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" />
       </list>
     </option>
   </component>
@@ -567,13 +558,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="18" selection-start="1315" selection-end="1315" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="118" column="22" selection-start="3275" selection-end="3275" vertical-scroll-proportion="0.0">
@@ -674,7 +658,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="53" selection-start="2453" selection-end="2453" vertical-scroll-proportion="0.5245684">
+        <state line="37" column="0" selection-start="1113" selection-end="1198" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="40" selection-start="762" selection-end="762" vertical-scroll-proportion="-0.30278885">
           <folding />
         </state>
       </provider>
