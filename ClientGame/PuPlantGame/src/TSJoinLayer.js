@@ -39,11 +39,18 @@ var TSJoinLayer = cc.Layer.extend({
         var scene = cc.Scene.create();
         scene.addChild(TSMainMenu.create());
         cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
+
+        var sPacket = {
+            MM:"SysOrder",
+            Order:"LeaveRoom"
+        };
+        SendBuffer(G_hSocket, sPacket);
     },
 
     onMessageProc:function (oPacket) {
         switch(oPacket.MM) {
             case "JoinRoom":
+
                 var room = oPacket.Data;
 
                 this.subMenu.removeAllChildren(true);
@@ -63,6 +70,11 @@ var TSJoinLayer = cc.Layer.extend({
                     this.subMenu.addChild(back);
                 }
 
+                break;
+            case "RemoveRoom":
+                var scene = cc.Scene.create();
+                scene.addChild(TSRoomLayer.create());
+                cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
                 break;
         }
     }

@@ -21,15 +21,15 @@ var TSHallLayer = cc.Layer.extend({
             back.setScale(0.8);
 
             var cp_back = back.getPosition();
-            cp_back.y -= 175.0;
+            cp_back.y = -175.0;
             back.setPosition(cp_back);
 
-            label = cc.LabelTTF.create("Enter Game", "Arial", 20);
-            var enter = cc.MenuItemLabel.create(label, this.onEnterGame);
+            label = cc.LabelTTF.create("EnterGame", "Arial", 20);
+            var enter = cc.MenuItemLabel.create(label, this.onEnterGameServer);
             enter.setScale(0.8);
 
             cp_back = enter.getPosition();
-            cp_back.y -= 200.0;
+            cp_back.y = -200.0;
             enter.setPosition(cp_back);
 
             this.menu = cc.Menu.create(back, enter);
@@ -50,15 +50,11 @@ var TSHallLayer = cc.Layer.extend({
         return bRet;
     },
 
-    onEnterGame:function(pSender) {
+    onEnterGameServer:function(pSender) {
 
     },
 
     onBackCallback:function (pSender) {
-        var scene = cc.Scene.create();
-        scene.addChild(TSMainMenu.create());
-        cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
-
         var sPacket = {
             MM:"SysOrder",
             Order:"RemoveRoom"
@@ -84,6 +80,7 @@ var TSHallLayer = cc.Layer.extend({
                 break;
 
             case "JoinRoom":
+            case "LeaveRoom":
                 var room = oPacket.Data;
 
                 this.subMenu.removeAllChildren(true);
@@ -103,7 +100,12 @@ var TSHallLayer = cc.Layer.extend({
 
                     this.subMenu.addChild(back);
                 }
+                break;
 
+            case "RemoveRoom":
+                var scene = cc.Scene.create();
+                scene.addChild(TSMainMenu.create());
+                cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
                 break;
 
         }

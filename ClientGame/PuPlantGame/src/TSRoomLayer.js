@@ -1,6 +1,7 @@
 var TSRoomLayer = cc.Layer.extend({
 
     menu:null,
+    subMenu:null,
 
     init:function () {
         var bRet = false;
@@ -18,25 +19,40 @@ var TSRoomLayer = cc.Layer.extend({
             var back = cc.MenuItemLabel.create(label, this.onBackCallback);
             back.setScale(0.8);
 
-            this.menu = cc.Menu.create(back);
-            this.menu.alignItemsVerticallyWithPadding(10);
+            var cp_back = back.getPosition();
+            cp_back.y = -200.0;
+            back.setPosition(cp_back);
+
+            label = cc.LabelTTF.create("GetRoomList", "Arial", 20);
+            var GetRoomList = cc.MenuItemLabel.create(label, this.onGetRoomList);
+            GetRoomList.setScale(0.8);
+
+            var cp_GetRoomList = GetRoomList.getPosition();
+            cp_GetRoomList.y = -175.0;
+            GetRoomList.setPosition(cp_GetRoomList);
+
+            this.menu = cc.Menu.create(back, GetRoomList);
             this.addChild(this.menu);
 
-            var cp_back = back.getPosition();
-            cp_back.y -= 200.0;
-            back.setPosition(cp_back);
+            this.subMenu = cc.Menu.create(back, GetRoomList);
+            this.addChild(this.subMenu);
 
             bRet = true;
 
-            var sPacket = {
-                MM:"SysOrder",
-                Order:"GetRoomList"
-            };
-            SendBuffer(G_hSocket, sPacket);
+            this.onGetRoomList(null);
         }
 
         return bRet;
     },
+
+    onGetRoomList:function (pSender) {
+        var sPacket = {
+            MM:"SysOrder",
+            Order:"GetRoomList"
+        };
+        SendBuffer(G_hSocket, sPacket);
+    },
+
     onBackCallback:function (pSender) {
         var scene = cc.Scene.create();
         scene.addChild(TSMainMenu.create());
@@ -60,8 +76,8 @@ var TSRoomLayer = cc.Layer.extend({
     onMessageProc:function (oPacket) {
         switch(oPacket.MM){
             case "GetRoomList":
-                cc.MenuItemFont.setFontName("Arial");
-                cc.MenuItemFont.setFontSize(26);
+
+                this.subMenu.removeAllChildren(true);
 
                 var index = 0;
                 for (var i in oPacket.Data){
@@ -75,7 +91,7 @@ var TSRoomLayer = cc.Layer.extend({
                     PosRoom.y = 200 - 25 * index++;
                     room.setPosition(PosRoom);
 
-                    this.menu.addChild(room);
+                    this.subMenu.addChild(room);
                 }
 
                 break;

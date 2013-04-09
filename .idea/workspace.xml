@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HallServer/HallSystem.js" afterPath="$PROJECT_DIR$/HallServer/HallSystem.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js" />
     </list>
     <ignored path="LighterWebPlatform.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +36,11 @@
     <file path="/TSSettingLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365388586973" ignored="false" />
     <file path="/ChatClient.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365389183657" ignored="false" />
     <file path="/StructDefine.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365397615460" ignored="false" />
-    <file path="/HallSystem.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365509576646" ignored="false" />
+    <file path="/HallSystem.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365512567332" ignored="false" />
     <file path="$PROJECT_DIR$/../NodeJSTest/main.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365421822752" ignored="false" />
-    <file path="/TSHallLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365507240330" ignored="false" />
-    <file path="/TSRoomLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365508818134" ignored="false" />
-    <file path="/TSJoinLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365511282484" ignored="false" />
+    <file path="/TSHallLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365514047702" ignored="false" />
+    <file path="/TSRoomLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365513514842" ignored="false" />
+    <file path="/TSJoinLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365512837422" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,19 +150,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="TSHallLayer.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="TSHallLayer.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="37" column="0" selection-start="1113" selection-end="1198" vertical-scroll-proportion="0.0">
+            <state line="32" column="39" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.32802126">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TSJoinLayer.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TSJoinLayer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="40" selection-start="762" selection-end="762" vertical-scroll-proportion="-0.30278885">
+            <state line="48" column="0" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -204,7 +207,7 @@
       <file leaf-file-name="TSRoomLayer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="28" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.0">
+            <state line="82" column="44" selection-start="2447" selection-end="2447" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -213,7 +216,7 @@
       <file leaf-file-name="HallSystem.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HallServer/HallSystem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="113" column="44" selection-start="3067" selection-end="3067" vertical-scroll-proportion="0.0">
+            <state line="159" column="0" selection-start="4243" selection-end="4243" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -266,11 +269,11 @@
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/main.js" />
         <option value="$PROJECT_DIR$/HallServer/HallServerMain.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/index.html" />
-        <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js" />
-        <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js" />
         <option value="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
         <option value="$PROJECT_DIR$/HallServer/HallSystem.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" />
+        <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js" />
+        <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js" />
       </list>
     </option>
   </component>
@@ -472,7 +475,7 @@
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.251235" sideWeight="0.6106965" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.151729" sideWeight="0.8731343" order="0" side_tool="false" content_ui="combo" />
@@ -554,7 +557,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="84" />
+      <option name="time" value="85" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -596,13 +599,6 @@
     <entry file="file://$PROJECT_DIR$/ClientGame/cocos2d/touch_dispatcher/CCTouchDispatcher.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="657" column="0" selection-start="21444" selection-end="21444" vertical-scroll-proportion="0.3322091">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="28" selection-start="1540" selection-end="1540" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -649,23 +645,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="0" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="82" column="44" selection-start="2447" selection-end="2447" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/HallServer/HallSystem.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="113" column="44" selection-start="3067" selection-end="3067" vertical-scroll-proportion="0.0">
+        <state line="159" column="0" selection-start="4243" selection-end="4243" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="0" selection-start="1113" selection-end="1198" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="40" selection-start="762" selection-end="762" vertical-scroll-proportion="-0.30278885">
+        <state line="32" column="39" selection-start="1024" selection-end="1024" vertical-scroll-proportion="0.32802126">
           <folding />
         </state>
       </provider>

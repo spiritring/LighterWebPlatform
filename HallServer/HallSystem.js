@@ -12,6 +12,7 @@ var def = require("./StructDefine");
 var Pool_User = {UUID:{}, NAME:{}};
 var G_RoomIDAdapt = 0;
 
+var Pool_UUID_ROOM = {};
 
 var Pool_Room = {};
 function CRoom(){
@@ -97,6 +98,33 @@ function HallSystem(){
                 var iRoomID = parseInt(sOrder[1]);
                 this.Msg_JoinRoom(iUUID, iRoomID);
                 break;
+            case "LeaveRoom":
+                this.Msg_LeaveRoom(iUUID);
+                break;
+        }
+    };
+
+    this.Msg_LeaveRoom = function (iUUID) {
+        if(!(iUUID in Pool_UUID_ROOM)) {
+            return;
+        }
+        var roomID = Pool_UUID_ROOM[iUUID];
+
+        if(!(roomID in Pool_Room))
+        {
+            return;
+        }
+
+        var room = Pool_Room[roomID];
+
+        delete room.ClientArr[iUUID];
+
+        for (var i in room.ClientArr) {
+            var sPacket = {};
+            sPacket.UUID = i;
+            sPacket.MM = "LeaveRoom";
+            sPacket.Data = room;
+            this.SendBuffer(sPacket.UUID, sPacket);
         }
     };
 
@@ -105,6 +133,8 @@ function HallSystem(){
         if (iRoomID in Pool_Room) {
             var room = Pool_Room[iRoomID];
             room.ClientArr[iUUID] = Pool_User.UUID[iUUID].Name;
+
+            Pool_UUID_ROOM[iUUID] = room.RoomID;
 
             for (var i in room.ClientArr) {
                 var sPacket = {};
@@ -118,8 +148,16 @@ function HallSystem(){
 
     this.Msg_RemoveRoom = function(iUUID){
         for (var i in Pool_Room) {
-            var iter = Pool_Room[i];
-            if (iter.LeaderID == iUUID){
+            var room = Pool_Room[i];
+            if (room.LeaderID == iUUID){
+
+                for (var j in room.ClientArr) {
+                    var sPacket = {};
+                    sPacket.UUID = j;
+                    sPacket.MM = "RemoveRoom";
+                    this.SendBuffer(sPacket.UUID, sPacket);
+                }
+
                 delete Pool_Room[i];
                 break;
             }
@@ -148,6 +186,8 @@ function HallSystem(){
         room.LeaderID = iUUID;
         room.LeaderName = Pool_User.UUID[iUUID].Name;
         Pool_Room[room.RoomID] = room;
+
+        Pool_UUID_ROOM[iUUID] = room.RoomID;
 
         var sName = Pool_User.UUID[iUUID].Name;
         var sPacket = {
