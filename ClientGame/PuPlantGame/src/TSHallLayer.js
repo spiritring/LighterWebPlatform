@@ -42,6 +42,12 @@ var TSHallLayer = cc.Layer.extend({
         var scene = cc.Scene.create();
         scene.addChild(TSMainMenu.create());
         cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
+
+        var sPacket = {
+            MM:"SysOrder",
+            Order:"RemoveRoom"
+        };
+        SendBuffer(G_hSocket, sPacket);
     },
     onMessageProc:function(oPacket){
 

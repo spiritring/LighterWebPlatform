@@ -63,7 +63,7 @@ var TSRoomLayer = cc.Layer.extend({
                     room.setScale(0.8);
 
                     var PosRoom = room.getPosition();
-                    PosRoom.y -= 25 * index++;
+                    PosRoom.y = 200 - 25 * index++;
                     room.setPosition(PosRoom);
 
                     this.menu.addChild(room);

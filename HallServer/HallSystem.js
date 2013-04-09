@@ -14,6 +14,7 @@ var G_RoomIDAdapt = 0;
 
 
 var Pool_Room = {};
+
 function CRoom(){
     this.ClientArr = {};
     this.RoomID = 0;
@@ -29,6 +30,8 @@ function HallSystem(){
         if(iUUID == 0) {
             return;
         }
+
+        this.Msg_RemoveRoom(iUUID);
 
         if(iUUID in Pool_User.UUID){
             var name = Pool_User.UUID[iUUID].Name;
@@ -69,6 +72,19 @@ function HallSystem(){
             case "GetRoomList":
                 this.Msg_GetRoomList(iUUID, hSocket);
                 break;
+            case "RemoveRoom":
+                this.Msg_RemoveRoom(iUUID);
+                break;
+        }
+    };
+
+    this.Msg_RemoveRoom = function(iUUID){
+        for (var i in Pool_Room) {
+            var iter = Pool_Room[i];
+            if (iter.LeaderID == iUUID){
+                delete Pool_Room[i];
+                break;
+            }
         }
     };
 
