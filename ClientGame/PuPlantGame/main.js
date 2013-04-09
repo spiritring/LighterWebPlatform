@@ -67,4 +67,4 @@ G_SceneType = {
 
 G_SceneState = G_SceneType.TSMainMenuLayer;
 
-var myApp = new cocos2dApp(TSMainMenu.scene);
+myApp = {};

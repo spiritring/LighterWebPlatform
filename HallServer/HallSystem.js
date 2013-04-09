@@ -14,6 +14,12 @@ var Pool_User = {UUID:{}, NAME:{}};
 function HallSystem(){
 
     this.ClientOffLine = function(iUUID) {
+
+        console.log("ClientOffLine:UUID=" + iUUID);
+        if(iUUID == 0) {
+            return;
+        }
+
         var name = Pool_User.UUID[iUUID].Name;
         delete Pool_User.NAME[name];
         delete Pool_User.UUID[iUUID];
@@ -57,7 +63,8 @@ function HallSystem(){
         //通知玩家登陆成功.
         var sPacket = {
             MM : "LoginSuccess",
-            UUID : iUUID
+            UUID : iUUID,
+            NAME : sName
         };
         tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
     }
