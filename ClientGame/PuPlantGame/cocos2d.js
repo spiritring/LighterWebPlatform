@@ -45,6 +45,8 @@
             'engine/TSPoint.js',
 
             //Game
+            'src/TSHallLayer.js',
+            'src/TSRoomLayer.js',
             'src/TSSprite.js',
             'src/TSAboutLayer.js',
             'src/TSGameLayer.js',

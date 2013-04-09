@@ -86,7 +86,7 @@ function RunServer(iPORT, iUUID) {
         function(hSocket) {
             G_ClientNumber ++;
             G_ClientUUID++;
-            hSocket.UUID = G_GateWay.UUID * 10000 + G_ClientUUID;
+            hSocket.UUID = G_ClientUUID * 100 + G_GateWay.UUID;
             G_PoolClientSocket[hSocket.UUID] = hSocket;
             console.log("newSocket 网关客户数:" + G_ClientNumber + " UUID:" + hSocket.UUID);
         }

@@ -47,6 +47,17 @@ var TSMainMenu = cc.Layer.extend({
         var aboutSelected = cc.Sprite.create(s_menu, cc.rect(252, 33, 126, 33));
         var aboutDisabled = cc.Sprite.create(s_menu, cc.rect(252, 33 * 2, 126, 33));
 
+
+        cc.MenuItemFont.setFontName("Arial");
+        cc.MenuItemFont.setFontSize(26);
+        var label = cc.LabelTTF.create("CreateRoom", "Arial", 20);
+        var createRoom = cc.MenuItemLabel.create(label, this.onCreateRoom);
+        createRoom.setScale(0.8);
+
+        label = cc.LabelTTF.create("JoinRoom", "Arial", 20);
+        var JoinRoom = cc.MenuItemLabel.create(label, this.onJoinRoom);
+        createRoom.setScale(0.8);
+
         var newGame = cc.MenuItemSprite.create(newGameNormal, newGameSelected, newGameDisabled,
             this.onNewGame, this);
         var gameSettings = cc.MenuItemSprite.create(gameSettingsNormal, gameSettingsSelected, gameSettingsDisabled,
@@ -54,11 +65,30 @@ var TSMainMenu = cc.Layer.extend({
         var about = cc.MenuItemSprite.create(aboutNormal, aboutSelected, aboutDisabled,
             this.onAbout, this);
 
-        var menu = cc.Menu.create(newGame, gameSettings, about);
+        var menu = cc.Menu.create(newGame, gameSettings, about, createRoom, JoinRoom);
         menu.alignItemsVerticallyWithPadding(10);
         this.addChild(menu, 1, 2);
         menu.setPosition(winSize.width / 2, winSize.height / 2 - 80);
         this.schedule(this.update, 0.1);
+    },
+
+
+    onCreateRoom:function(){
+        var sPacket = {};
+        sPacket.MM = "SysOrder";
+        sPacket.Order = "CreateRoom:";
+        SendBuffer(G_hSocket, sPacket);
+
+        var scene = cc.Scene.create();
+        scene.addChild(TSHallLayer.create());
+        cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
+    },
+
+    onJoinRoom:function(){
+
+        var scene = cc.Scene.create();
+        scene.addChild(TSRoomLayer.create());
+        cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
     },
 
     onNewGame:function (pSender) {
