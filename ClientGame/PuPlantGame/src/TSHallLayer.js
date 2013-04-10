@@ -51,7 +51,11 @@ var TSHallLayer = cc.Layer.extend({
     },
 
     onEnterGameServer:function(pSender) {
-
+        var sPacket = {
+            MM:"SysOrder",
+            Order:"EnterGame"
+        };
+        SendBuffer(G_hSocket, sPacket);
     },
 
     onBackCallback:function (pSender) {

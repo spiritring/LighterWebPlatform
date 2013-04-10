@@ -21,7 +21,7 @@ var Pool_UUID_ROOM = {};
 //房间池
 var Pool_Room = {}; //Key: RoomID Value: CRoom
 function CRoom(){
-    this.ClientArr = {};
+    this.ClientArr = {}; //Key: PUUID, Value: Name
     this.RoomID = 0;
     this.LeaderID = 0;
     this.LeaderName = "";
@@ -33,6 +33,11 @@ var Pool_GateWaySocket = {};
 //游戏服ID分配器
 var G_GameServerIDAdapt = cfg.GameServerIDAdapt;
 var Pool_GameServerSocket = {};
+function CGameServer(){
+    this.RoomNumber = 0;
+    this.UUID = 0;
+    this.Socket = null;
+};
 
 //////////////////////////////////////////////////////
 // 大厅服务处理
@@ -44,14 +49,23 @@ function HallSystem(){
         }
     }
 
-    this.RegGateWay = function(iUUID, hSocket) {
-        Pool_GateWaySocket[iUUID] = hSocket;
-        hSocket.UUID = iUUID;
+    this.RegGateWay = function(oPacket, hSocket) {
+        Pool_GateWaySocket[oPacket.UUID] = {};
+        Pool_GateWaySocket[oPacket.UUID].Socket = hSocket;
+        Pool_GateWaySocket[oPacket.UUID].IP = oPacket.IP;
+        Pool_GateWaySocket[oPacket.UUID].PORT = oPacket.PORT;
+        hSocket.UUID = oPacket.UUID;
     };
 
     this.RegGameServer = function(hSocket) {
         var iUUID = ++G_GameServerIDAdapt;
-        Pool_GameServerSocket[iUUID] = hSocket;
+
+        var gs = new CGameServer();
+        gs.RoomNumber = 0;
+        gs.UUID = iUUID;
+        gs.Socket = hSocket;
+
+        Pool_GameServerSocket[iUUID] = gs;
         hSocket.UUID = iUUID;
 
         var sPacket = {
@@ -62,9 +76,37 @@ function HallSystem(){
     };
 
     this.SendBuffer = function(iUUID, sPacket) {
-        var iGWUUID = iUUID % 1000;
-        tcp.SendBuffer(Pool_GateWaySocket[iGWUUID], JSON.stringify(sPacket));
-    }
+        tcp.SendBuffer(this.PlayerUUIDGetGateWaySocket(iUUID), JSON.stringify(sPacket));
+    };
+
+    this.PlayerUUIDGetGateWayUUID = function (iUUID){
+        var iGWUUID = iUUID % cfg.GateWayServerPlayerIDRule;
+        return iGWUUID;
+    };
+
+    this.PlayerUUIDGetGateWayIP = function(iUUID) {
+        var iGWUUID = this.PlayerUUIDGetGateWayUUID(iUUID);
+        if (iGWUUID in Pool_GateWaySocket) {
+            return Pool_GateWaySocket[iGWUUID].IP;
+        }
+        return null;
+    };
+
+    this.PlayerUUIDGetGateWayPort = function(iUUID) {
+        var iGWUUID = this.PlayerUUIDGetGateWayUUID(iUUID);
+        if (iGWUUID in Pool_GateWaySocket) {
+            return Pool_GateWaySocket[iGWUUID].PORT;
+        }
+        return null;
+    };
+
+    this.PlayerUUIDGetGateWaySocket = function(iUUID) {
+        var iGWUUID = this.PlayerUUIDGetGateWayUUID(iUUID);
+        if (iGWUUID in Pool_GateWaySocket) {
+            return Pool_GateWaySocket[iGWUUID].Socket;
+        }
+        return null;
+    };
 
     this.ClientOffLine = function(iUUID) {
 
@@ -135,7 +177,47 @@ function HallSystem(){
             case "LeaveRoom":
                 this.Msg_LeaveRoom(iUUID);
                 break;
+            case "EnterGame":
+                this.Msg_EnterGame(iUUID);
+                break;
         }
+    };
+
+    this.Msg_EnterGame = function (iUUID) {
+        if (!(iUUID in Pool_UUID_ROOM)) {
+            return;
+        }
+        var roomID = Pool_UUID_ROOM[iUUID];
+        var room = Pool_Room[roomID];
+
+        // 找到压力比较小的GameServer;
+        var gs = null;
+        var iMax = cfg.GameServerMaxRoom;
+        for (var i in Pool_GameServerSocket){
+            var iter = Pool_GameServerSocket[i];
+            if (iter.RoomNumber < iMax) {
+                iMax = iter.RoomNumber;
+                gs = iter;
+            }
+        }
+
+        if(gs == null) {
+            console.error("Error! 没有可以承载Room的GameServer了!");
+            return;
+        }
+
+        // 发包给游戏服.并主动链接GateWay.需要多少连接多少.
+        var sPacket = {};
+        sPacket.WS = {};
+        for (var iUUID in room.ClientArr) {
+            var iGWUUID = this.PlayerUUIDGetGateWayUUID(iUUID);
+            sPacket.WS[iGWUUID] = {};
+            sPacket.WS[iGWUUID].IP = this.PlayerUUIDGetGateWayIP(iUUID);
+            sPacket.WS[iGWUUID].Port = this.PlayerUUIDGetGateWayPort(iUUID);
+            sPacket.WS[iGWUUID].UUID = iGWUUID;
+        }
+        sPacket.Room = room;
+        tcp.SendBuffer(gs.Socket, JSON.stringify(sPacket));
     };
 
     this.Msg_LeaveRoom = function (iUUID) {

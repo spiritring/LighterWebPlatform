@@ -11,7 +11,7 @@ var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function
             var iPORT = parseInt(oPacket.PORT);
             var iUUID = parseInt(oPacket.UUID);
             RunServer_WS(iPORT, iUUID);
-            RunServer(iPORT%10000+10000, iUUID);
+            RunServer(iPORT%cfg.GateWayServerPort+cfg.GateWayServerPort, iUUID);
             break;
         case "HS_ConnectHall":
             //重新连接大厅
@@ -93,7 +93,7 @@ function RunServer_WS(iPORT, iUUID) {
         function(hSocket) {
             G_ClientNumber ++;
             G_ClientUUID++;
-            hSocket.UUID = G_ClientUUID * 1000 + G_GateWay.UUID;
+            hSocket.UUID = G_ClientUUID * cfg.GateWayServerPlayerIDRule + G_GateWay.UUID;
             G_PoolClientSocket[hSocket.UUID] = hSocket;
             console.log("newSocket 网关客户数:" + G_ClientNumber + " UUID:" + hSocket.UUID);
         }
@@ -104,6 +104,11 @@ function RunServer(iPORT, iUUID) {
     G_GateWayTCP = tcp.CreateServer(iPORT,
         function () {
             console.log("GateWay TCP Init Success! Port:" + iPORT + " UUID:" + iUUID);
+
+            G_GateWayTCP.UUID = iUUID;
+            G_GateWayTCP.PORT = G_GateWayTCP.address().port;
+            G_GateWayTCP.IP = G_GateWayTCP.address().address;
+
         },
 
         function (hSocket, sBuffer) {
@@ -125,10 +130,14 @@ function RunServer(iPORT, iUUID) {
 
 //大厅连接成功
 function HallConnectSuccess() {
-    var iUUID = G_GateWay.UUID;
+    var iUUID = G_GateWayTCP.UUID;
+    var sIP = G_GateWayTCP.IP;
+    var iPort = G_GateWayTCP.PORT;
     var sPacket = {
         MM:"RegGateWay",
-        UUID:iUUID
+        UUID:iUUID,
+        IP: sIP,
+        PORT: iPort
     };
     tcp.SendBuffer(G_HallSocket, JSON.stringify(sPacket));
 };

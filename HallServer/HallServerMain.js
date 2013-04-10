@@ -36,7 +36,7 @@ tcp.CreateServer(cfg.HallServerPort,
                 HallSystem.ClientOffLine(parseInt(oPacket.UUID));
                 break;
             case "RegGateWay":
-                HallSystem.RegGateWay(oPacket.UUID, hSocket);
+                HallSystem.RegGateWay(oPacket, hSocket);
                 break;
             case "RegGameServer":
                 HallSystem.RegGameServer(hSocket);

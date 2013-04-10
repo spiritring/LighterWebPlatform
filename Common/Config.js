@@ -6,11 +6,13 @@ module.exports = {
     GateWayServerPort: 10000, // 10000-20000
     GateWayServerPort_WS: 20000,
     GateWayServerIP: "127.0.0.1",
+    GateWayServerPlayerIDRule: 1000,
 
     HallServerPort: 9001, // 唯一
     HallServerIP: "127.0.0.1",
 
     GameServerIDAdapt: 1000,
+    GameServerMaxRoom: 20,
 
     end: null
 };
