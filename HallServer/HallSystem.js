@@ -219,6 +219,9 @@ function HallSystem(){
         }
         sPacket.Room = room;
         tcp.SendBuffer(gs.Socket, JSON.stringify(sPacket));
+
+        // 进入游戏后销毁房间
+        delete Pool_Room[roomID];
     };
 
     this.Msg_LeaveRoom = function (iUUID) {

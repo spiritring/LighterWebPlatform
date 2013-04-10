@@ -4,29 +4,33 @@ var cfg = require("../Common/Config");
 
 /////////////////////////////////////////////////////////
 // 向AdapterServer请求UUID和端口号
-var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "", function(){}, function(sBuffer){
-    var oPacket = JSON.parse(sBuffer);
-    switch(oPacket.MM){
-        case "GW_GetUuidPort":
-            var iPORT = parseInt(oPacket.PORT);
-            var iUUID = parseInt(oPacket.UUID);
-            RunServer_WS(iPORT, iUUID);
-            RunServer(iPORT%cfg.GateWayServerPort+cfg.GateWayServerPort, iUUID);
-            break;
-        case "HS_ConnectHall":
-            //重新连接大厅
-            console.log("重新连接大厅. 成功!");
-            G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerIP,
-                HallConnectSuccess,
-                HallMessageRoute
-            );
-            break;
-    };
-});
+var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "",
+    function(){
+        var sPacket = {};
+        sPacket["MM"] = "GW_GetUuidPort"; //请求UUID Port
+        tcp.SendBuffer(hASSocket, JSON.stringify(sPacket));
+    },
+    function(sBuffer){
+        var oPacket = JSON.parse(sBuffer);
+        switch(oPacket.MM){
+            case "GW_GetUuidPort":
+                var iPORT = parseInt(oPacket.PORT);
+                var iUUID = parseInt(oPacket.UUID);
+                RunServer_WS(iPORT, iUUID);
+                RunServer(iPORT%cfg.GateWayServerPort+cfg.GateWayServerPort, iUUID);
+                break;
+            case "HS_ConnectHall":
+                //重新连接大厅
+                console.log("重新连接大厅. 成功!");
+                G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerIP,
+                    HallConnectSuccess,
+                    HallMessageRoute
+                );
+                break;
+        };
+    }
+);
 
-var sPacket = {};
-sPacket["MM"] = "GW_GetUuidPort"; //请求UUID Port
-tcp.SendBuffer(hASSocket, JSON.stringify(sPacket));
 
 /////////////////////////////////////////////////////////
 // ws服务器启动完成.监听消息

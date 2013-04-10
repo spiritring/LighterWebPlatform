@@ -10,6 +10,7 @@ function CGateWay(Port, IP, Socket) {
     this.Port = Port;
     this.IP = IP;
     this.Socket = Socket;
+    this.Number = 0;
 };
 
 // 启动适配服

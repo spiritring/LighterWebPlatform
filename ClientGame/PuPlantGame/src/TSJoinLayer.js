@@ -50,6 +50,7 @@ var TSJoinLayer = cc.Layer.extend({
     onMessageProc:function (oPacket) {
         switch(oPacket.MM) {
             case "JoinRoom":
+            case "LeaveRoom":
 
                 var room = oPacket.Data;
 

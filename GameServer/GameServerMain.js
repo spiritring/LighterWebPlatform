@@ -1,13 +1,21 @@
 var tcp = require("../LighterWebEngine/TCP");
 var cfg = require("../Common/Config");
 
+// 服务器的描述
 var G_GameServer = {
     UUID:0
 };
 
+// 连接大厅
 var G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerIP,
     function () {
         console.log("游戏服连接大厅服成功!");
+
+        // 请求大厅注册
+        var sPacket = {
+            MM: "RegGameServer"
+        };
+        tcp.SendBuffer(G_HallSocket, JSON.stringify(sPacket));
     },
 
     function (sBuffer) {
@@ -23,17 +31,16 @@ var G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerIP,
     }
 );
 
-var sPacket = {
-    MM: "RegGameServer"
-};
-tcp.SendBuffer(G_HallSocket, JSON.stringify(sPacket));
-
 //////////////////////////////////////////////////////////////////////////
 // 游戏房间管理
-var Pool_Room = {};
-var Pool_UUID_ROOM = {};
+
+// 房间管理
+var Pool_Room = {}; //Key: RoomID Value: CRoom
+var Pool_UUID_ROOM = {}; // Key: 玩家UUID Value: RoomID
+
 // 网关连接管理
-var Pool_GW = {};
+var Pool_GW = {}; // Key: 网关UUID Value: Socket
+
 // 消息处理
 function Msg_EnterGame(oPacket) {
     Pool_Room[oPacket.Room.RoomID] = oPacket.Room;
@@ -57,17 +64,24 @@ function Msg_EnterGame(oPacket) {
 
         var hSocket = tcp.CreateClient(iter.Port, iter.IP,
             function () {
-                console.log("连接网关 Port:" + iter.Port + " IP:" + iter.IP + " UUID:" + iter.UUID);
-                Pool_GW[iter.UUID] = hSocket;
 
-                //通知网关.更改该UUID的玩家.与Hall断开路由.转而与本游戏服路由.
-                var sPacket = {};
-                sPacket.MM = "RouteToGameServer";
-                sPacket.Room = oPacket.Room;
-                tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
             },
             ClientMsgProcess
         );
+
+        hSocket.UUID = iter.UUID;
+        hSocket.Port = iter.Port;
+        hSocket.IP = iter.IP;
+        hSocket.Room = oPacket.Room;
+
+        console.log("连接网关 Port:" + hSocket.Port + " IP:" + hSocket.IP + " UUID:" + hSocket.UUID);
+        Pool_GW[hSocket.UUID] = hSocket;
+
+        //通知网关.更改该UUID的玩家.与Hall断开路由.转而与本游戏服路由.
+        var sPacket = {};
+        sPacket.MM = "RouteToGameServer";
+        sPacket.Room = hSocket.Room;
+        tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
     }
 };
 
