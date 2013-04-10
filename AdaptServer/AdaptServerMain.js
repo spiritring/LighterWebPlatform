@@ -4,7 +4,7 @@ var uuid = require("../LighterWebEngine/UUID");
 var tcp = require("../LighterWebEngine/TCP");
 var ws = require('../LighterWebEngine/WebSocket');
 
-//网关池.用来分析.玩家与哪个网关相连
+// 网关池.用来分析.玩家与哪个网关相连
 var Pool_GateWay = [];
 function CGateWay(Port, IP, Socket) {
     this.Port = Port;
@@ -12,6 +12,7 @@ function CGateWay(Port, IP, Socket) {
     this.Socket = Socket;
 };
 
+// 启动适配服
 tcp.CreateServer(cfg.AdaptServerPort,
     function() {
         console.log("Timeshift AdaptTCPServer Success!");
@@ -20,13 +21,13 @@ tcp.CreateServer(cfg.AdaptServerPort,
     function(hSocket, sBuffer) {
         var oPacket = JSON.parse(sBuffer);
         switch (oPacket.MM) {
-            case "GW_GetUuidPort":
+            case "GW_GetUuidPort":  //网关启动获取UUID和动态Port
                 GateWay_GetUUID(hSocket);
                 break;
-            case "GW_RegGateWay":
+            case "GW_RegGateWay":   //通过分配的Port启动网关之后的回馈.注册网关
                 GateWay_RegGateWay(hSocket, oPacket);
                 break;
-            case "HS_ConnectHall":
+            case "HS_ConnectHall":  //大厅重启的时候.通过该消息重连
                 Hall_ConnectHall();
                 break;
         };
@@ -55,7 +56,7 @@ tcp.CreateServer(cfg.AdaptServerPort,
 
 function GateWay_GetUUID(hSocket){
     var iUUID = hSocket.UUID;
-    var iPORT = uuid.G_PORT() + cfg.GateWayServerPort;
+    var iPORT = uuid.G_PORT() + cfg.GateWayServerPort_WS;
     hSocket.PORT= iPORT;
 
     var sPacket = {};
@@ -86,7 +87,7 @@ function Hall_ConnectHall() {
 };
 
 //////////////////////////////////////////////
-//ws服务器流程
+//ws服务器流程: 决定登陆的客户端连接哪个网关
 var G_ClientNumber = 0;
 
 ws.CreateServer(cfg.AdaptServerPort_WS,

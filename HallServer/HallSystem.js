@@ -9,12 +9,17 @@ var tcp = require("../LighterWebEngine/TCP");
 var cfg = require("../Common/Config");
 var def = require("./StructDefine");
 
+//玩家池
 var Pool_User = {UUID:{}, NAME:{}};
+
+//房间ID分配器
 var G_RoomIDAdapt = 0;
 
+//通过UUID查找ROOMID的查找器
 var Pool_UUID_ROOM = {};
 
-var Pool_Room = {};
+//房间池
+var Pool_Room = {}; //Key: RoomID Value: CRoom
 function CRoom(){
     this.ClientArr = {};
     this.RoomID = 0;
@@ -22,12 +27,38 @@ function CRoom(){
     this.LeaderName = "";
 };
 
+//网关池. Key:网关UUID Value:网关Socket
 var Pool_GateWaySocket = {};
 
+//游戏服ID分配器
+var G_GameServerIDAdapt = cfg.GameServerIDAdapt;
+var Pool_GameServerSocket = {};
+
+//////////////////////////////////////////////////////
+// 大厅服务处理
 function HallSystem(){
+
+    this.Disconnect = function(hSocket) {
+        if(hSocket.UUID in Pool_GameServerSocket) {
+            delete Pool_GameServerSocket[hSocket.UUID];
+        }
+    }
 
     this.RegGateWay = function(iUUID, hSocket) {
         Pool_GateWaySocket[iUUID] = hSocket;
+        hSocket.UUID = iUUID;
+    };
+
+    this.RegGameServer = function(hSocket) {
+        var iUUID = ++G_GameServerIDAdapt;
+        Pool_GameServerSocket[iUUID] = hSocket;
+        hSocket.UUID = iUUID;
+
+        var sPacket = {
+            MM:"RegGameServer",
+            UUID:iUUID
+        };
+        tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
     };
 
     this.SendBuffer = function(iUUID, sPacket) {
@@ -49,13 +80,16 @@ function HallSystem(){
             delete Pool_User.NAME[name];
             delete Pool_User.UUID[iUUID];
 
-            console.log("玩家下线 名字:" + name + " UUID:" + iUUID + " 大厅人数:" + Object.keys(Pool_User.UUID).length);
+            console.log("玩家下线 名字:" + name +
+                " UUID:" + iUUID +
+                " 大厅人数:" + Object.keys(Pool_User.UUID).length);
         }
     };
 
+    // 玩家操作处理.
     this.ProcessOrder = function (sBuffer, iUUID, hSocket) {
-
         var sOrder = sBuffer.split(":");
+
         switch(sOrder[0]) {
             case "Login":
             case "login":

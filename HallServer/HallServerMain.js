@@ -38,11 +38,14 @@ tcp.CreateServer(cfg.HallServerPort,
             case "RegGateWay":
                 HallSystem.RegGateWay(oPacket.UUID, hSocket);
                 break;
+            case "RegGameServer":
+                HallSystem.RegGameServer(hSocket);
+                break;
         }
     },
 
     function(hSocket) {
-
+        HallSystem.Disconnect(hSocket);
     },
 
     function(hSocket) {
