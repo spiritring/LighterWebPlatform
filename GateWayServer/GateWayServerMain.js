@@ -39,12 +39,10 @@ var G_ClientUUID = 0;
 var G_PoolClientSocket = {};
 
 function RunServer_WS(iPORT, iUUID) {
-    console.log(iPORT);
-
     // 创建客户端服务器
     G_GateWay = ws.CreateServer(iPORT,
         function() {
-            console.log("GateWay Init Success!");
+            console.log("GateWay WebSocket Init Success! Port:" + iPORT + " UUID:" + iUUID);
             sPacket = {};
             sPacket.MM = "GW_RegGateWay"; //客户端自动连接网关操作
             sPacket.IP = G_GateWay.address().address;
@@ -102,10 +100,10 @@ function RunServer_WS(iPORT, iUUID) {
     );
 };
 
-function RunServer(iPort, iUUID) {
-    G_GateWayTCP = tcp.CreateServer(iPort,
+function RunServer(iPORT, iUUID) {
+    G_GateWayTCP = tcp.CreateServer(iPORT,
         function () {
-
+            console.log("GateWay TCP Init Success! Port:" + iPORT + " UUID:" + iUUID);
         },
 
         function (hSocket, sBuffer) {
