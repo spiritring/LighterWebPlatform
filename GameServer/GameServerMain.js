@@ -44,6 +44,7 @@ var Pool_GW = {}; // Key: 网关UUID Value: Socket
 // 消息处理
 function Msg_EnterGame(oPacket) {
     Pool_Room[oPacket.Room.RoomID] = oPacket.Room;
+    console.log("房间数量:" + Object.keys(Pool_Room).length + " 新加入房间ID:" + oPacket.Room.RoomID);
 
     for (var iUUID in oPacket.Room.ClientArr) {
         Pool_UUID_ROOM[iUUID] = oPacket.Room.RoomID;
@@ -103,6 +104,26 @@ function ClientMsgProcess(sBuffer) {
                 UUID : oPacket.UUID
             };
             GS_SendBuffer(oPacket.UUID, JSON.stringify(sPacket));
+
+            console.log("玩家离开游戏房间:" + oPacket.UUID);
+
+            //处理Room. 如果玩家都离线了. 则删除房子.并通知大厅.更新 GS的房子数数据
+            var roomID = Pool_UUID_ROOM[oPacket.UUID];
+            if (roomID in Pool_Room){
+                var room = Pool_Room[roomID];
+                if (oPacket.UUID in room.ClientArr) {
+                    delete room.ClientArr[oPacket.UUID];
+                    if(Object.keys(room.ClientArr) <= 0) {
+                        delete Pool_Room[roomID];
+                        var sPacket = {
+                            MM:"GS_RemoveRoom",
+                            RoomID:roomID,
+                            GSID:G_GameServer.UUID
+                        };
+                        tcp.SendBuffer(G_HallSocket,JSON.stringify(sPacket));
+                    }
+                }
+            }
             break;
     }
 };

@@ -41,6 +41,9 @@ tcp.CreateServer(cfg.HallServerPort,
             case "RegGameServer":
                 HallSystem.RegGameServer(hSocket);
                 break;
+            case "GS_RemoveRoom":
+                HallSystem.GS_RemoveRoom(oPacket);
+                break;
         }
     },
 

@@ -119,15 +119,11 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
     },
 
     function (hSocket, reasonCode, description) {
-        G_ClientNumber --;
-        console.log("客户端下线退出游戏! 人数:" + G_ClientNumber);
 
     },
 
     function (hSocket) {
         G_ClientNumber ++;
-        console.log("客户端上线! 人数:" + G_ClientNumber);
-
     }
 );
 

@@ -68,11 +68,11 @@ function RunServer_WS(iPORT, iUUID) {
 
         // 客户端消息转发: 如果玩家在大厅.则转发到大厅. 如果玩家在游戏.则转发到游戏服
         function(hSocket, sBuffer) {
+            var oPacket = JSON.parse(sBuffer);
+            oPacket.UUID = hSocket.UUID;
 
             // 通过hSocket.UUID 找对应的Game服Socket.然后把数据转发过去.
             if (hSocket.UUID in G_PoolUUIDInGameServer) {
-                var oPacket = JSON.parse(sBuffer);
-                oPacket.UUID = hSocket.UUID;
                 tcp.SendBuffer(G_PoolUUIDInGameServer[hSocket.UUID],JSON.stringify(oPacket));
                 return;
             }
@@ -82,22 +82,33 @@ function RunServer_WS(iPORT, iUUID) {
                 console.log("没有连接到大厅服务!");
                 return;
             }
-            var oPacket = JSON.parse(sBuffer);
-            oPacket.UUID = hSocket.UUID;
             tcp.SendBuffer(G_HallSocket,JSON.stringify(oPacket));
         },
 
         // 客户端断开连接操作:  通知大厅玩家下线
         function(hSocket, reasonCode, description) {
             G_ClientNumber --;
-            delete G_PoolClientSocket[hSocket.UUID];
             console.log("close 网关客户数:" + G_ClientNumber + " UUID:" + hSocket.UUID);
 
+            delete G_PoolClientSocket[hSocket.UUID];
+
+            // 通知大厅玩家断开链接
             var sPacket = {
                 MM:"ClientOffLine",
                 UUID:hSocket.UUID
             };
+
             tcp.SendBuffer(G_HallSocket,JSON.stringify(sPacket));
+
+            // 如果该玩家在GameServer.那么通知GS服.该玩家断线.
+            if (hSocket.UUID in G_PoolUUIDInGameServer) {
+                sPacket = {
+                    MM:"LeaveGame",
+                    UUID:hSocket.UUID
+                };
+                tcp.SendBuffer(G_PoolUUIDInGameServer[hSocket.UUID],JSON.stringify(sPacket));
+            }
+
         },
 
         // 客户端登陆成功.分配UUID给客户端.

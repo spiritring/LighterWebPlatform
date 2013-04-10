@@ -8,24 +8,25 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" afterPath="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GameServer/GameServerMain.js" afterPath="$PROJECT_DIR$/GameServer/GameServerMain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" afterPath="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HallServer/HallServerMain.js" afterPath="$PROJECT_DIR$/HallServer/HallServerMain.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/HallServer/HallSystem.js" afterPath="$PROJECT_DIR$/HallServer/HallSystem.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" afterPath="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="LighterWebPlatform.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365565684545" ignored="false" />
+    <file path="/Dummy.txt" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365620024725" ignored="false" />
     <file path="/TCP.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365393323261" ignored="false" />
     <file path="/Config.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365576332595" ignored="false" />
     <file path="/GateWayProcess.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365249754489" ignored="false" />
     <file path="/GateWayServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365587307152" ignored="false" />
-    <file path="/fragment.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365588788704" ignored="false" />
+    <file path="/fragment.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365622564586" ignored="false" />
     <file path="/WebSocket.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365324277893" ignored="false" />
     <file path="/AdaptServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365589030268" ignored="false" />
     <file path="/WSClient.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365254669589" ignored="false" />
     <file path="$PROJECT_DIR$/../JSTest/HelloWorld.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365257622819" ignored="false" />
     <file path="/HelloWorld.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365257616035" ignored="false" />
     <file path="/UUID.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365259589164" ignored="false" />
-    <file path="/HallServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365569749512" ignored="false" />
+    <file path="/HallServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365622322204" ignored="false" />
     <file path="/main.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365505214495" ignored="false" />
     <file path="/cocos2d.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365493648259" ignored="false" />
     <file path="/WebSocketEngine.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365319191585" ignored="false" />
@@ -37,12 +38,12 @@
     <file path="/TSSettingLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365388586973" ignored="false" />
     <file path="/ChatClient.html" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365389183657" ignored="false" />
     <file path="/StructDefine.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365397615460" ignored="false" />
-    <file path="/HallSystem.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365588133610" ignored="false" />
+    <file path="/HallSystem.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365622383492" ignored="false" />
     <file path="$PROJECT_DIR$/../NodeJSTest/main.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365421822752" ignored="false" />
     <file path="/TSHallLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365585015124" ignored="false" />
     <file path="/TSRoomLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365513514842" ignored="false" />
     <file path="/TSJoinLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365512837422" ignored="false" />
-    <file path="/GameServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365590282471" ignored="false" />
+    <file path="/GameServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365622971150" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,10 +153,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GameServerMain.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="GameServerMain.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GameServer/GameServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="0" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.0">
+            <state line="107" column="52" selection-start="2928" selection-end="2928" vertical-scroll-proportion="0.3187251">
               <folding />
             </state>
           </provider>
@@ -173,7 +174,7 @@
       <file leaf-file-name="HallServerMain.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="35" column="43" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0">
+            <state line="41" column="33" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -182,7 +183,7 @@
       <file leaf-file-name="AdaptServerMain.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="107" column="0" selection-start="2988" selection-end="2988" vertical-scroll-proportion="0.0">
+            <state line="7" column="22" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -191,7 +192,7 @@
       <file leaf-file-name="HallSystem.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HallServer/HallSystem.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="249" column="0" selection-start="6812" selection-end="6812" vertical-scroll-proportion="-20.0">
+            <state line="230" column="0" selection-start="6441" selection-end="6441" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -224,10 +225,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TSJoinLayer.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TSJoinLayer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="52" column="29" selection-start="1423" selection-end="1423" vertical-scroll-proportion="0.2682603">
+            <state line="31" column="24" selection-start="905" selection-end="905" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -236,7 +237,7 @@
       <file leaf-file-name="GateWayServerMain.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="6" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0">
+            <state line="103" column="57" selection-start="3459" selection-end="3459" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -268,14 +269,14 @@
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/index.html" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSRoomLayer.js" />
         <option value="$PROJECT_DIR$/Common/Config.js" />
-        <option value="$PROJECT_DIR$/HallServer/HallServerMain.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSGameLayer.js" />
-        <option value="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
-        <option value="$PROJECT_DIR$/HallServer/HallSystem.js" />
-        <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
-        <option value="$PROJECT_DIR$/GameServer/GameServerMain.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js" />
+        <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
+        <option value="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
+        <option value="$PROJECT_DIR$/HallServer/HallServerMain.js" />
+        <option value="$PROJECT_DIR$/HallServer/HallSystem.js" />
+        <option value="$PROJECT_DIR$/GameServer/GameServerMain.js" />
       </list>
     </option>
   </component>
@@ -297,7 +298,7 @@
     <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
-    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+    <navigator proportions="" version="1" splitterProportion="0.5">
       <flattenPackages />
       <showMembers />
       <showModules />
@@ -308,57 +309,21 @@
       <autoscrollFromSource />
       <sortByType />
     </navigator>
-    <panes>
-      <pane id="ProjectPane">
-        <subPane>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HallServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-        </subPane>
-      </pane>
-      <pane id="Scope" />
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="JavaScript.Libraries" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/GameServer/GameServerMain.js" />
+    <property name="options.lastSelected" value="JavaScript.Libraries" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/GameServer/GameServerMain.js" />
     <property name="FullScreen" value="true" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
-  <component name="RunManager" selected="Node.js.GateWayServerMain.js">
+  <component name="RunManager" selected="Node.js.GameServerMain.js">
     <configuration default="true" type="DartUnitRunConfigurationType" factoryName="DartUnit">
       <option name="VMOptions" />
       <option name="arguments" />
@@ -565,22 +530,18 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="142" />
+      <option name="time" value="144" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ClientGame/cocos2d/touch_dispatcher/CCTouchDispatcher.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="657" column="0" selection-start="21444" selection-end="21444" vertical-scroll-proportion="0.3322091">
-          <folding />
-        </state>
+        <state line="657" column="0" selection-start="21444" selection-end="21444" vertical-scroll-proportion="0.3322091" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/WebSocketEngine.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="4" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.7796392">
-          <folding />
-        </state>
+        <state line="45" column="4" selection-start="1244" selection-end="1244" vertical-scroll-proportion="0.7796392" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ClientGame/cocos2d/platform/CCApplication.js">
@@ -606,28 +567,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Common/Config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="32" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="6" column="32" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSGameLayer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="0" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="6" selection-start="445" selection-end="445" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="107" column="0" selection-start="2988" selection-end="2988" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -646,27 +591,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GameServer/GameServerMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="0" selection-start="1197" selection-end="1197" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="35" column="43" selection-start="1037" selection-end="1037" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/HallServer/HallSystem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="249" column="0" selection-start="6812" selection-end="6812" vertical-scroll-proportion="-20.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSHallLayer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="86" column="29" selection-start="2341" selection-end="2358" vertical-scroll-proportion="0.0">
@@ -676,7 +600,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSJoinLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="29" selection-start="1423" selection-end="1423" vertical-scroll-proportion="0.2682603">
+        <state line="31" column="24" selection-start="905" selection-end="905" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AdaptServer/AdaptServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="22" selection-start="269" selection-end="269" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="57" selection-start="3459" selection-end="3459" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HallServer/HallServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="33" selection-start="1261" selection-end="1261" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HallServer/HallSystem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="230" column="0" selection-start="6441" selection-end="6441" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GameServer/GameServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="107" column="52" selection-start="2928" selection-end="2928" vertical-scroll-proportion="0.3187251">
           <folding />
         </state>
       </provider>

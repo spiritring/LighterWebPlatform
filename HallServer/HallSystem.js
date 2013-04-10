@@ -32,7 +32,7 @@ var Pool_GateWaySocket = {};
 
 //游戏服ID分配器
 var G_GameServerIDAdapt = cfg.GameServerIDAdapt;
-var Pool_GameServerSocket = {};
+var Pool_GameServerSocket = {}; //包含游戏服上面的所有信息. Key:UUID Value:CGameServer
 function CGameServer(){
     this.RoomNumber = 0;
     this.UUID = 0;
@@ -75,6 +75,10 @@ function HallSystem(){
         tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
     };
 
+    this.GS_RemoveRoom = function(oPacket) {
+        Pool_GameServerSocket[oPacket.GSID].RoomNumber--;
+    };
+
     this.SendBuffer = function(iUUID, sPacket) {
         tcp.SendBuffer(this.PlayerUUIDGetGateWaySocket(iUUID), JSON.stringify(sPacket));
     };
@@ -109,9 +113,8 @@ function HallSystem(){
     };
 
     this.ClientOffLine = function(iUUID) {
-
-        console.log("ClientOffLine:UUID=" + iUUID);
         if(iUUID == 0) {
+            console.log("ClientOffLine:UUID=" + iUUID);
             return;
         }
 
@@ -205,6 +208,8 @@ function HallSystem(){
             console.error("Error! 没有可以承载Room的GameServer了!");
             return;
         }
+
+        gs.RoomNumber ++;
 
         // 发包给游戏服.并主动链接GateWay.需要多少连接多少.
         var sPacket = {};
