@@ -139,6 +139,10 @@ var TSGameLayer = cc.Layer.extend({
     },
 
     onBackCallback:function (pSender) {
+        var sPacket = {MM:"LeaveGame"};
+        SendBuffer(G_hSocket, sPacket);
+
+        //TSTS
         var scene = cc.Scene.create();
         scene.addChild(TSMainMenu.create());
         cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));

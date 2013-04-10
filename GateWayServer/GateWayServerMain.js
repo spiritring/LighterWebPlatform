@@ -38,6 +38,8 @@ var G_ClientNumber = 0;
 var G_ClientUUID = 0;
 var G_PoolClientSocket = {};
 
+var G_PoolUUIDInGameServer = {};
+
 function RunServer_WS(iPORT, iUUID) {
     // 创建客户端服务器
     G_GateWay = ws.CreateServer(iPORT,
@@ -64,9 +66,14 @@ function RunServer_WS(iPORT, iUUID) {
         function(hSocket, sBuffer) {
 
             // 通过hSocket.UUID 找对应的Game服Socket.然后把数据转发过去.
+            if (hSocket.UUID in G_PoolUUIDInGameServer) {
+                var oPacket = JSON.parse(sBuffer);
+                oPacket.UUID = hSocket.UUID;
+                tcp.SendBuffer(G_PoolUUIDInGameServer[hSocket.UUID],JSON.stringify(oPacket));
+                return;
+            }
 
-
-
+            // 如果没有路由到GameServer. 则进入Hall路由
             if(G_HallSocket == null){
                 console.log("没有连接到大厅服务!");
                 return;
@@ -112,15 +119,49 @@ function RunServer(iPORT, iUUID) {
         },
 
         function (hSocket, sBuffer) {
+            var oPacket = JSON.parse(sBuffer);
 
+            // 系统消息处理
+            switch(oPacket.MM) {
+                case "RouteToGameServer":
+                    var room = oPacket.Room;
+                    for (var iUUID in room.ClientArr){
+                        G_PoolUUIDInGameServer[iUUID] = hSocket;
+                        hSocket.ClientArr.push(iUUID);
+
+                        if (iUUID in G_PoolClientSocket) {
+                            var sPacket = {MM:"EnterGame"};
+                            ws.SendBuffer(G_PoolClientSocket[iUUID], JSON.stringify(sPacket));
+                        }
+                    }
+
+                    return;
+
+                case "LeaveGame":
+                    var iUUID = oPacket.UUID;
+                    delete G_PoolUUIDInGameServer[iUUID];
+                    return;
+            }
+
+            // 玩家消息路由
+            var iUUID = oPacket.UUID;
+            if (!(iUUID in G_PoolClientSocket)){
+                console.log("网关获取了 错误的玩家UUID:" + iUUID + " G_GateWay.UUID:" + G_GateWay.UUID);
+                return;
+            }
+            ws.SendBuffer(G_PoolClientSocket[iUUID], JSON.stringify(oPacket));
         },
 
         function (hSocket) {
-
+            for (var i = 0 ; i < hSocket.ClientArr.length; i++) {
+                if (hSocket.ClientArr[i] in G_PoolUUIDInGameServer){
+                    delete G_PoolUUIDInGameServer[hSocket.ClientArr[i]];
+                }
+            }
         },
 
         function (hSocket) {
-
+            hSocket.ClientArr = [];
         }
     );
 };

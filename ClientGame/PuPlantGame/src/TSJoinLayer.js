@@ -76,6 +76,12 @@ var TSJoinLayer = cc.Layer.extend({
                 scene.addChild(TSRoomLayer.create());
                 cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
                 break;
+
+            case "EnterGame":
+                var scene = cc.Scene.create();
+                scene.addChild(TSGameLayer.create());
+                cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
+                break;
         }
     }
 });

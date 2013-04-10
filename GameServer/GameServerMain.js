@@ -46,7 +46,12 @@ function Msg_EnterGame(oPacket) {
         var iter = oPacket.WS[i];
 
         //判断是否连接了重复的网关
-        if ( iter.UUID in Pool_GW) {
+        if (iter.UUID in Pool_GW) {
+            //通知网关.更改该UUID的玩家.与Hall断开路由.转而与本游戏服路由.
+            var sPacket = {};
+            sPacket.MM = "RouteToGameServer";
+            sPacket.Room = oPacket.Room;
+            tcp.SendBuffer(Pool_GW[iter.UUID], JSON.stringify(sPacket));
             continue;
         }
 
@@ -59,10 +64,9 @@ function Msg_EnterGame(oPacket) {
                 var sPacket = {};
                 sPacket.MM = "RouteToGameServer";
                 sPacket.Room = oPacket.Room;
-
                 tcp.SendBuffer(hSocket, JSON.stringify(sPacket));
             },
-            ProcessMsg
+            ClientMsgProcess
         );
     }
 };
@@ -76,7 +80,16 @@ function GS_SendBuffer(iUUID, sBuffer) {
     tcp.SendBuffer(Pool_GW[PlayerUUIDGetGateWayUUID(iUUID)], sBuffer);
 };
 
-function ProcessMsg(sBuffer) {
+function ClientMsgProcess(sBuffer) {
     var oPacket = JSON.parse(sBuffer);
+    switch(oPacket.MM) {
+        case "LeaveGame":
+            var sPacket = {
+                MM : "LeaveGame",
+                UUID : oPacket.UUID
+            };
+            GS_SendBuffer(oPacket.UUID, JSON.stringify(sPacket));
+            break;
+    }
 };
 
