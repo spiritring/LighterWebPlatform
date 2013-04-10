@@ -208,6 +208,7 @@ function HallSystem(){
 
         // 发包给游戏服.并主动链接GateWay.需要多少连接多少.
         var sPacket = {};
+        sPacket.MM = "EnterGame";
         sPacket.WS = {};
         for (var iUUID in room.ClientArr) {
             var iGWUUID = this.PlayerUUIDGetGateWayUUID(iUUID);
