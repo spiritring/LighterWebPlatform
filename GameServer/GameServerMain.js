@@ -125,6 +125,21 @@ function ClientMsgProcess(sBuffer) {
                 }
             }
             break;
+        case "C_AllBallSys":
+            var iUUID = oPacket.UUID;
+            var roomID = Pool_UUID_ROOM[iUUID];
+
+            if(roomID in Pool_Room) {
+                var room = Pool_Room[roomID];
+
+                for (var iMemberUUID in room.ClientArr) {
+                    if(iUUID != iMemberUUID){
+                        oPacket.UUID = iMemberUUID;
+                        GS_SendBuffer(iMemberUUID, JSON.stringify(oPacket));
+                    }
+                }
+            }
+            break;
     }
 };
 

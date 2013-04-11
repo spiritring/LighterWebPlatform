@@ -11,6 +11,11 @@ var TSGameLayer = cc.Layer.extend({
     m_Map: null,
     m_Star: null,
 
+    //对手
+    m_pSubOO: null,
+    m_pSubMeshPos: null,
+    m_pPoolSubBall: null,
+
     //Game
     m_Choose: null,
     m_SpiritPool: null,
@@ -65,7 +70,6 @@ var TSGameLayer = cc.Layer.extend({
         return true;
     },
 
-
     init:function () {
         this.sprite = null;
 
@@ -74,6 +78,11 @@ var TSGameLayer = cc.Layer.extend({
         this.m_pOO = new TSPoint(0,0);
         this.m_Map = new TSMap();
         this.m_Star = new TSAStar();
+
+        //对手起点坐标
+        this.m_pSubOO = new TSPoint(0,0);
+        this.m_pSubMeshPos = [[0],[0],[0],[0],[0],[0],[0],[0],[0]];
+        this.m_pPoolSubBall = [];
 
         //Game
         this.m_Choose = null;
@@ -112,7 +121,30 @@ var TSGameLayer = cc.Layer.extend({
                 }
             }
 
+            // 初始化对手数据
+            this.m_pSubOO = new TSPoint(winSize.width/2 + 320 / 2 - pR.size.width/4, winSize.height/2 - pR.size.height/4);
+            for (var i = 0; i < 9; i++) {
+                for (var j = 0; j < 9; j++) {
+                    this.m_pSubMeshPos[i][j] = cc.p(this.m_pSubOO.m_x + i * 33 + 32/2, this.m_pSubOO.m_y + j * 33 + 32/2);
+                }
+            }
+
             this.random3Ball();
+
+            // 一次移动球操作之后.需要发包同步球位置数据
+            var sPacket = {};
+            sPacket.MM = "C_AllBallSys";
+            sPacket.Ball = [];
+            for (var i = 0 ; i < this.m_SpiritPool.length; i++) {
+                var spr = this.m_SpiritPool[i];
+                var _tmp = {};
+                _tmp.Pos = spr.pos;
+                _tmp.Color = spr.iColor;
+                sPacket.Ball.push(_tmp);
+            }
+            sPacket.Map = this.m_Map.m_map;
+            SendBuffer(G_hSocket, sPacket);
+            
 
             ///Sys
             cc.MenuItemFont.setFontName("Arial");
@@ -529,6 +561,7 @@ var TSGameLayer = cc.Layer.extend({
 
                 }
 
+                // 结束游戏流程.
                 if (this.m_SpiritPool.length >= 81) {
                     for (var i = 0; i < 81; i++) {
                         this.m_Map.m_map[i] = 0;
@@ -544,6 +577,20 @@ var TSGameLayer = cc.Layer.extend({
                     this.random3Ball();
                 }
             }
+
+            // 一次移动球操作之后.需要发包同步球位置数据
+            var sPacket = {};
+            sPacket.MM = "C_AllBallSys";
+            sPacket.Ball = [];
+            for (var i = 0 ; i < this.m_SpiritPool.length; i++) {
+                var spr = this.m_SpiritPool[i];
+                var _tmp = {};
+                _tmp.Pos = spr.pos;
+                _tmp.Color = spr.iColor;
+                sPacket.Ball.push(_tmp);
+            }
+            sPacket.Map = this.m_Map.m_map;
+            SendBuffer(G_hSocket, sPacket);
 
             //测试用
 //            for (var i = 0; i < this.m_pPathSpriteList.length; i++) {
@@ -594,12 +641,37 @@ var TSGameLayer = cc.Layer.extend({
             }
         }
         this.m_Choose.setPosition(pMove);
+    },
+
+    onMessageProc:function (oPacket) {
+        switch(oPacket.MM){
+            case "C_AllBallSys":
+                for (var i = 0 ; i < this.m_pPoolSubBall.length ; i++){
+                    this.removeChild(this.m_pPoolSubBall[i], true);
+                }
+                this.m_pPoolSubBall = [];
+
+                for (var i = 0 ; i < oPacket.Ball.length ; i++){
+                    var iter = oPacket.Ball[i];
+                    var spr = TSSprite.CreateSprite(iter.Pos, iter.Color);
+                    var loc = this.m_pSubMeshPos[iter.Pos.m_x][iter.Pos.m_y];
+                    spr.setPosition(loc);
+                    this.addChild(spr);
+
+                    this.m_pPoolSubBall.push(spr);
+                }
+
+                break;
+        }
     }
 });
+
+var G_TSGameLayer = null;
 
 TSGameLayer.create = function () {
     var sg = new TSGameLayer();
     if (sg && sg.init()) {
+        G_TSGameLayer = sg;
         return sg;
     }
     return null;
@@ -613,7 +685,7 @@ TSGameLayer.scene = function () {
 };
 
 TSGameLayer.MessageProc = function(oPacket) {
-
+    G_TSGameLayer.onMessageProc(oPacket);
 }
 
 
