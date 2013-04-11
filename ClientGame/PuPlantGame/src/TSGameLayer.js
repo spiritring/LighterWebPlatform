@@ -93,12 +93,18 @@ var TSGameLayer = cc.Layer.extend({
             this.addChild(sp, 0, 1000);
 
             var bg = cc.Sprite.create(s_board_test);
-            bg.setPosition(cc.p(winSize.width / 2, winSize.height / 2));
+            bg.setPosition(cc.p(winSize.width / 2 - 320 / 2, winSize.height / 2));
             bg.setScale(0.5);
             this.addChild(bg, 0, 1001);
 
+            bg = cc.Sprite.create(s_board_test);
+            bg.setPosition(cc.p(winSize.width / 2 + 320 / 2, winSize.height / 2));
+            bg.setScale(0.5);
+            this.addChild(bg, 0, 1001);
+
+
             var pR = bg.getTextureRect();
-            this.m_pOO = new TSPoint(winSize.width/2 - pR.size.width/4, winSize.height/2 - pR.size.height/4);
+            this.m_pOO = new TSPoint(winSize.width/2 - 320 / 2 - pR.size.width/4, winSize.height/2 - pR.size.height/4);
 
             for (var i = 0; i < 9; i++) {
                 for (var j = 0; j < 9; j++) {
@@ -120,8 +126,8 @@ var TSGameLayer = cc.Layer.extend({
             this.addChild(menu);
 
             var cp_back = back.getPosition();
-            cp_back.x += 100.0;
-            cp_back.y -= 210.0;
+            cp_back.x = 0;
+            cp_back.y = -210.0;
             back.setPosition(cp_back);
 
             if( 'keyboard' in sys.capabilities )
@@ -185,6 +191,10 @@ var TSGameLayer = cc.Layer.extend({
             this.m_Choose = this.GetMeshSprite(xy);
             if (this.m_Choose != null) {
                 this.m_iStat = 1;
+                var action = cc.ScaleBy.create(0.5, 0.5);
+                var action_back = action.reverse();
+                var seq = cc.Sequence.create(action, action_back);
+                this.m_Choose.runAction(cc.RepeatForever.create(seq));
             }
         }else if(this.m_iStat == 1) {
             this.m_pPath = [];
@@ -506,6 +516,9 @@ var TSGameLayer = cc.Layer.extend({
             this.m_MapSpr[l][h] = this.m_Choose;
             this.m_iStat = 0;
 
+            this.m_Choose.stopAllActions();
+            this.m_Choose.setScale(1);
+
             if (this.removeBall(this.m_Choose)) {
                 //add score
                 this.m_Choose = null;
@@ -532,25 +545,26 @@ var TSGameLayer = cc.Layer.extend({
                 }
             }
 
-            for (var i = 0; i < this.m_pPathSpriteList.length; i++) {
-                this.removeChild(this.m_pPathSpriteList[i], true);
-            }
-            this.m_pPathSpriteList = [];
-
-            for (var i = 0; i < this.m_Map.m_width * this.m_Map.m_height; i++) {
-                var l = parseInt(i / this.m_Map.m_width);
-                var h = parseInt(i % this.m_Map.m_height);
-
-                if (this.m_Map.m_map[i] == 0) {
-                    continue;
-                }
-                var pT = cc.Sprite.create("res/chess1.png");
-                this.m_pPathSpriteList.push(pT);
-                var pP = this.m_pMeshPos[l][h];
-                pT.setPosition(pP);
-                pT.setScale(0.5);
-                this.addChild(pT, 2, 1);
-            }
+            //测试用
+//            for (var i = 0; i < this.m_pPathSpriteList.length; i++) {
+//                this.removeChild(this.m_pPathSpriteList[i], true);
+//            }
+//            this.m_pPathSpriteList = [];
+//
+//            for (var i = 0; i < this.m_Map.m_width * this.m_Map.m_height; i++) {
+//                var l = parseInt(i / this.m_Map.m_width);
+//                var h = parseInt(i % this.m_Map.m_height);
+//
+//                if (this.m_Map.m_map[i] == 0) {
+//                    continue;
+//                }
+//                var pT = cc.Sprite.create("res/chess1.png");
+//                this.m_pPathSpriteList.push(pT);
+//                var pP = this.m_pMeshPos[l][h];
+//                pT.setPosition(pP);
+//                pT.setScale(0.5);
+//                this.addChild(pT, 2, 1);
+//            }
             return;
         }
 
