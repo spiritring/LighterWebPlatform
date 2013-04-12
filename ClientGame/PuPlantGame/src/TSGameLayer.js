@@ -144,7 +144,7 @@ var TSGameLayer = cc.Layer.extend({
             }
             sPacket.Map = this.m_Map.m_map;
             SendBuffer(G_hSocket, sPacket);
-            
+
 
             ///Sys
             cc.MenuItemFont.setFontName("Arial");
@@ -243,7 +243,11 @@ var TSGameLayer = cc.Layer.extend({
             if (tsNode.pPos.m_x != pT.m_x || tsNode.pPos.m_y != pT.m_y) {
                 //printf("错误的寻路!");
                 this.m_iStat = 0;
+
+                this.m_Choose.stopAllActions();
+                this.m_Choose.setScale(1);
                 this.m_Choose = null;
+
                 return false;
             }
 
