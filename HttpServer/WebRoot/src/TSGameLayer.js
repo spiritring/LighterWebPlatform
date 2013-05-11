@@ -1,7 +1,6 @@
-
+cc.dumpConfig();
 
 var TSGameLayer = cc.Layer.extend({
-
     //Sys
     sprite: null,
 
@@ -25,48 +24,64 @@ var TSGameLayer = cc.Layer.extend({
     m_iIndexPath: null,
     m_iStat: null,
 
+    //缓存ball
+    m_vCacheSpr: [],
+
+
     rand: function(num) {
         return parseInt(Math.random()*num);
     },
 
     randomBall: function(){
-        var EmptyMap = [];
-        for (var i = 0; i < this.m_Map.m_width * this.m_Map.m_height; i++) {
-            if (this.m_Map.m_map[i] == 0) {
-                var l = parseInt(i / this.m_Map.m_width);
-                var h = parseInt(i % this.m_Map.m_height);
-                EmptyMap.push([l, h]);
-            }
-        }
-
-        if (EmptyMap.length <= 0) {
-            return false;
-        }
-
-        var choose = this.rand(EmptyMap.length);
-        var Pos = new TSPoint(EmptyMap[choose][0], EmptyMap[choose][1]);
+        var Pos = new TSPoint(0,0);
         var spr = TSSprite.CreateSprite(Pos, this.rand(5));
-
-        var loc = this.m_pMeshPos[Pos.m_x][Pos.m_y];
-        spr.setPosition(loc);
+        spr.setPosition(cc.p(50 + 33*this.m_vCacheSpr.length, winSize.height - 60));
         this.addChild(spr);
-
-        this.m_Map.m_map[Pos.m_x * this.m_Map.m_width + Pos.m_y] = 1;
-        this.m_MapSpr[Pos.m_x][Pos.m_y] = spr;
-
-        this.m_SpiritPool.push(spr);
-
-        this.removeBall(spr);
+        this.m_vCacheSpr.push(spr);
 
         return true;
     },
 
     random3Ball: function() {
+        for (var i = 0 ; i < this.m_vCacheSpr.length ; i++) {
+            var EmptyMap = [];
+            for (var j = 0; j < this.m_Map.m_width * this.m_Map.m_height; j++) {
+                if (this.m_Map.m_map[j] == 0) {
+                    var l = parseInt(j / this.m_Map.m_width);
+                    var h = parseInt(j % this.m_Map.m_height);
+                    EmptyMap.push([l, h]);
+                }
+            }
+
+            if (EmptyMap.length <= 0) {
+                return false;
+            }
+
+            var choose = this.rand(EmptyMap.length);
+            var Pos = new TSPoint(EmptyMap[choose][0], EmptyMap[choose][1]);
+            var spr = this.m_vCacheSpr[i];
+            spr.pos = Pos;
+            this.m_Map.m_map[Pos.m_x * this.m_Map.m_width + Pos.m_y] = 1;
+            this.m_MapSpr[Pos.m_x][Pos.m_y] = spr;
+            this.m_SpiritPool.push(spr);
+            var loc = this.m_pMeshPos[Pos.m_x][Pos.m_y];
+            spr.setPosition(loc);
+
+            var action = cc.ScaleBy.create(0.5, 0.5);
+            var action_back = action.reverse();
+            var seq = cc.Sequence.create(action, action_back);
+            spr.runAction(seq);
+
+            this.removeBall(spr);
+        }
+        this.m_vCacheSpr = [];
+
         for (var i = 0; i < 3; i++) {
             if(!this.randomBall()) {
                 return false;
             }
         }
+
         return true;
     },
 
@@ -92,6 +107,7 @@ var TSGameLayer = cc.Layer.extend({
         this.m_pPath = [];
         this.m_iIndexPath = 0;
         this.m_iStat = 0;
+        this.m_vCacheSpr = [];
 
         var bRet = false;
         if (this._super()) {
@@ -130,6 +146,7 @@ var TSGameLayer = cc.Layer.extend({
             }
 
             this.random3Ball();
+            this.random3Ball();
 
             // 一次移动球操作之后.需要发包同步球位置数据
             var sPacket = {};
@@ -144,7 +161,7 @@ var TSGameLayer = cc.Layer.extend({
             }
             sPacket.Map = this.m_Map.m_map;
             SendBuffer(G_hSocket, sPacket);
-            
+
 
             ///Sys
             cc.MenuItemFont.setFontName("Arial");
@@ -186,8 +203,12 @@ var TSGameLayer = cc.Layer.extend({
         cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
     },
 
-    onTouchesBegan:function (touches, event) {
+    onTouchesMoved:function (touches, event) {
         this.processEvent( touches[0] );
+    },
+
+    onMouseDragged:function( event ) {
+        //this.processEvent( event );
     },
 
     onMouseDown:function( event ) {
@@ -212,7 +233,8 @@ var TSGameLayer = cc.Layer.extend({
         if (xy.m_x > 8 || xy.m_y > 8) {
             return false;
         }
-        TSLog("我被点中了! x = " + xy.m_x + " y =" + xy.m_y);
+
+        console.log("我被点中了! x = " + xy.m_x + " y = " + xy.m_y);
 
         if (this.m_iStat == 0) {
             this.m_Choose = this.GetMeshSprite(xy);
@@ -236,11 +258,13 @@ var TSGameLayer = cc.Layer.extend({
 
             var tsNode = this.m_Star.getResult();
             if (tsNode.pPos.m_x != pT.m_x || tsNode.pPos.m_y != pT.m_y) {
-                TSLog("错误的寻路!");
+                //printf("错误的寻路!");
                 this.m_iStat = 0;
+
                 this.m_Choose.stopAllActions();
                 this.m_Choose.setScale(1);
                 this.m_Choose = null;
+
                 return false;
             }
 

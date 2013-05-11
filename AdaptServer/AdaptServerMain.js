@@ -98,7 +98,6 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
 
     function (hSocket, sBuffer) {
         var oPacket = JSON.parse(sBuffer);
-        console.log("客户端消息接受:" + oPacket.MM);
         switch(oPacket.MM) {
             case "ConnectGateWay":
                 if(Pool_GateWay.length <= 0){

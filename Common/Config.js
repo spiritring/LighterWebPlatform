@@ -14,8 +14,8 @@ module.exports = {
     GameServerIDAdapt: 1000,
     GameServerMaxRoom: 20,
 
-    HTTPServerIP: "192.168.1.103",
     HTTPServerPort: 9010,
+    HTTPServerIP: "192.168.1.103",
 
     end: null
 };

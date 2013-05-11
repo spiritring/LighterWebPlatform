@@ -24,7 +24,7 @@
     }
 
     // initialize
-    WebSocketEngine = function(sIP, iPort, funInit, callbackMessage, callbackError) {
+    WebSocketEngine = function(sIP,iPort,funInit,callbackMessage, callbackError) {
         // connect to the local server
         var connection = connect(
             sIP,
