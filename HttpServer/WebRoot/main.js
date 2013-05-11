@@ -69,8 +69,5 @@ G_SceneType = {
 };
 
 G_SceneState = G_SceneType.TSMainMenuLayer;
-G_UserInfo = {};
-G_UserInfo.NAME = "NAME";
-G_UserInfo.UUID = "UUID";
-myApp = new cocos2dApp(TSMainMenu.scene);
+
 

@@ -190,10 +190,6 @@ var TSGameLayer = cc.Layer.extend({
         this.processEvent( touches[0] );
     },
 
-    onMouseDragged:function( event ) {
-        //this.processEvent( event );
-    },
-
     onMouseDown:function( event ) {
         this.processEvent( event );
     },
@@ -216,8 +212,7 @@ var TSGameLayer = cc.Layer.extend({
         if (xy.m_x > 8 || xy.m_y > 8) {
             return false;
         }
-
-        console.log("我被点中了! x = " + xy.m_x + " y = " + xy.m_y);
+        TSLog("我被点中了! x = " + xy.m_x + " y =" + xy.m_y);
 
         if (this.m_iStat == 0) {
             this.m_Choose = this.GetMeshSprite(xy);
@@ -241,8 +236,10 @@ var TSGameLayer = cc.Layer.extend({
 
             var tsNode = this.m_Star.getResult();
             if (tsNode.pPos.m_x != pT.m_x || tsNode.pPos.m_y != pT.m_y) {
-                //printf("错误的寻路!");
+                TSLog("错误的寻路!");
                 this.m_iStat = 0;
+                this.m_Choose.stopAllActions();
+                this.m_Choose.setScale(1);
                 this.m_Choose = null;
                 return false;
             }
