@@ -9,7 +9,7 @@
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365646194320" ignored="false" />
     <file path="/TCP.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365393323261" ignored="false" />
-    <file path="/Config.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365576332595" ignored="false" />
+    <file path="/Config.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1368258003123" ignored="false" />
     <file path="/GateWayProcess.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365249754489" ignored="false" />
     <file path="/GateWayServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1368249167265" ignored="false" />
     <file path="/fragment.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1368249686843" ignored="false" />
@@ -37,6 +37,7 @@
     <file path="/TSRoomLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365513514842" ignored="false" />
     <file path="/TSJoinLayer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365512837422" ignored="false" />
     <file path="/GameServerMain.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1365654814353" ignored="false" />
+    <file path="/HTTPServer.js" changelist="efacb91a-2bd8-4e9b-8359-ba34d9cf852f" time="1368258289304" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,19 +147,30 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="HTTPServer.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="HTTPServer.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/HttpServer/HTTPServer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="35" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
+            <state line="40" column="7" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.3939394">
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GateWayServerMain.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="97" selection-end="135" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TSGameLayer.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TSGameLayer.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/src/TSGameLayer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="243" column="0" selection-start="7466" selection-end="7466" vertical-scroll-proportion="0.5539823">
+            <state line="239" column="33" selection-start="7336" selection-end="7336" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#8070#14406#0" expanded="false" />
               </folding>
@@ -169,7 +181,7 @@
       <file leaf-file-name="Config.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Common/Config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="32" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
+            <state line="10" column="31" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -196,7 +208,7 @@
       <file leaf-file-name="main.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="0" selection-start="2646" selection-end="2646" vertical-scroll-proportion="0.0">
+            <state line="62" column="19" selection-start="2545" selection-end="2545" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -205,7 +217,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="35" selection-start="275" selection-end="275" vertical-scroll-proportion="-5.882353">
+            <state line="11" column="35" selection-start="275" selection-end="275" vertical-scroll-proportion="0.7352941">
               <folding />
             </state>
           </provider>
@@ -229,15 +241,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.xml" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/build.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindManager">
@@ -256,7 +259,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/AdaptServer/AdaptServerMain.js" />
         <option value="$PROJECT_DIR$/HallServer/HallServerMain.js" />
         <option value="$PROJECT_DIR$/HallServer/HallSystem.js" />
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/index.html" />
@@ -265,13 +267,14 @@
         <option value="$PROJECT_DIR$/ClientGame/PuPlantGame/src/TSGameLayer.js" />
         <option value="$PROJECT_DIR$/LighterWebEngine/TCP.js" />
         <option value="$PROJECT_DIR$/GateWayServer/GateWayServerMain.js" />
-        <option value="$PROJECT_DIR$/HttpServer/HTTPServer.js" />
         <option value="$PROJECT_DIR$/HttpServer/WebRoot/cocos2d.js" />
         <option value="$PROJECT_DIR$/HttpServer/WebRoot/src/resource.js" />
         <option value="$PROJECT_DIR$/HttpServer/WebRoot/src/WebSocketEngine.js" />
         <option value="$PROJECT_DIR$/HttpServer/WebRoot/main.js" />
         <option value="$PROJECT_DIR$/HttpServer/WebRoot/index.html" />
         <option value="$PROJECT_DIR$/HttpServer/WebRoot/src/TSGameLayer.js" />
+        <option value="$PROJECT_DIR$/Common/Config.js" />
+        <option value="$PROJECT_DIR$/HttpServer/HTTPServer.js" />
       </list>
     </option>
   </component>
@@ -335,61 +338,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebEngine" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="HttpServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HttpServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebRoot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LighterWebPlatform" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="HttpServer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="WebRoot" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -572,8 +521,8 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3283582" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="SLIDING" type="FLOATING" visible="false" weight="0.251235" sideWeight="0.6106965" order="1" side_tool="false" content_ui="tabs" x="922" y="242" width="356" height="358" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20843278" sideWeight="0.6411483" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.35885167" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20843278" sideWeight="0.6432" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2036595" sideWeight="0.6691542" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293944" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3293944" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -669,13 +618,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="35" selection-start="1913" selection-end="1913" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/LighterWebEngine/TCP.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="25" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0">
@@ -704,13 +646,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HttpServer/HTTPServer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="35" selection-start="295" selection-end="295" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/cocos2d.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="98" column="5" selection-start="3987" selection-end="3987" vertical-scroll-proportion="0.0">
@@ -732,13 +667,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Common/Config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="32" selection-start="198" selection-end="198" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/src/WebSocketEngine.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="30" selection-start="1006" selection-end="1006" vertical-scroll-proportion="0.0">
@@ -746,25 +674,48 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/main.js">
+    <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/src/TSGameLayer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="0" selection-start="2646" selection-end="2646" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="239" column="33" selection-start="7336" selection-end="7336" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#8070#14406#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="35" selection-start="275" selection-end="275" vertical-scroll-proportion="-5.882353">
+        <state line="11" column="35" selection-start="275" selection-end="275" vertical-scroll-proportion="0.7352941">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/src/TSGameLayer.js">
+    <entry file="file://$PROJECT_DIR$/HttpServer/WebRoot/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="243" column="0" selection-start="7466" selection-end="7466" vertical-scroll-proportion="0.5539823">
+        <state line="62" column="19" selection-start="2545" selection-end="2545" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GateWayServer/GateWayServerMain.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="97" selection-end="135" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Common/Config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="31" selection-start="302" selection-end="302" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HttpServer/HTTPServer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="40" column="7" selection-start="1106" selection-end="1106" vertical-scroll-proportion="0.3939394">
           <folding>
-            <element signature="e#8070#14406#0" expanded="false" />
+            <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
