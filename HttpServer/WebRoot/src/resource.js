@@ -106,5 +106,5 @@ var g_ressources = [
     //{src:s_fireEffect},
 
     // FNT
-    //{src:s_arial14_fnt}
+    {src:s_arial14_fnt}
 ];

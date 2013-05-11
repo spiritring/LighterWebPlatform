@@ -1,4 +1,4 @@
-cc.dumpConfig();
+
 
 var TSGameLayer = cc.Layer.extend({
 
@@ -186,7 +186,7 @@ var TSGameLayer = cc.Layer.extend({
         cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
     },
 
-    onTouchesMoved:function (touches, event) {
+    onTouchesBegan:function (touches, event) {
         this.processEvent( touches[0] );
     },
 
