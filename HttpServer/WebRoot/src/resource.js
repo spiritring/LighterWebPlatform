@@ -89,22 +89,22 @@ var g_ressources = [
     {src:s_chess6},
 
     //tmx
-    {src:s_level01},
+    //{src:s_level01},
 
     //plist
-    {src:s_Enemy_plist},
-    {src:s_explosion_plist},
-    {src:s_bullet_plist},
+    //{src:s_Enemy_plist},
+    //{src:s_explosion_plist},
+    //{src:s_bullet_plist},
 
     //music
-    {src:s_bgMusic},
-    {src:s_mainMainMusic},
+    //{src:s_bgMusic},
+    //{src:s_mainMainMusic},
 
     //effect
-    {src:s_buttonEffect},
-    {src:s_explodeEffect},
-    {src:s_fireEffect},
+    //{src:s_buttonEffect},
+    //{src:s_explodeEffect},
+    //{src:s_fireEffect},
 
     // FNT
-    {src:s_arial14_fnt}
+    //{src:s_arial14_fnt}
 ];

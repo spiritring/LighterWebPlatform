@@ -49,15 +49,15 @@ function RunServer_WS(iPORT, iUUID) {
     G_GateWay = ws.CreateServer(iPORT,
         function() {
             console.log("GateWay WebSocket Init Success! Port:" + iPORT + " UUID:" + iUUID);
-            sPacket = {};
+            var sPacket = {};
             sPacket.MM = "GW_RegGateWay"; //客户端自动连接网关操作
-            sPacket.IP = G_GateWay.address().address;
+            sPacket.IP =  cfg.GateWayServerIP;
             sPacket.Port = G_GateWay.address().port;
             tcp.SendBuffer(hASSocket,JSON.stringify(sPacket));
 
             G_GateWay.UUID = iUUID;
+            G_GateWay.IP =  cfg.GateWayServerIP;
             G_GateWay.PORT = G_GateWay.address().port;
-            G_GateWay.IP = G_GateWay.address().address;
 
             //连接大厅
             G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerIP,

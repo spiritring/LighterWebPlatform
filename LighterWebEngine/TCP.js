@@ -25,7 +25,7 @@ function CreateServer(iPort, funInit, funReceive, funClose, funConnect) {
 
         //数据错误事件
         hSocket.on('error',function(exception){
-            console.log('socket error:' + exception);
+            //console.log('socket error:' + exception);
             hSocket.end();
         });
 
