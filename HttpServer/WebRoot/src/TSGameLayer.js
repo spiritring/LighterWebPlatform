@@ -179,14 +179,18 @@ var TSGameLayer = cc.Layer.extend({
             cp_back.y = -210.0;
             back.setPosition(cp_back);
 
-            if( 'keyboard' in sys.capabilities )
+            if( 'keyboard' in sys.capabilities ) {
                 this.setKeyboardEnabled(true);
-
-            if( 'mouse' in sys.capabilities )
+                TSLog("keyboard!");
+            }
+            if( 'mouse' in sys.capabilities ) {
                 this.setMouseEnabled(true);
-
-            if( 'touches' in sys.capabilities )
+                TSLog("mouse!");
+            }
+            if( 'touches' in sys.capabilities ) {
                 this.setTouchEnabled(true);
+                TSLog("touches!");
+            }
 
             bRet = true;
         }
@@ -203,16 +207,14 @@ var TSGameLayer = cc.Layer.extend({
         cc.Director.getInstance().replaceScene(cc.TransitionFade.create(1.2, scene));
     },
 
-    onTouchesMoved:function (touches, event) {
+    onTouchesBegan:function (touches, event) {
         this.processEvent( touches[0] );
-    },
-
-    onMouseDragged:function( event ) {
-        //this.processEvent( event );
+        return true;
     },
 
     onMouseDown:function( event ) {
         this.processEvent( event );
+        return true;
     },
 
     GetMeshSprite: function(pos) {
