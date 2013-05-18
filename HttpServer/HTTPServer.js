@@ -8,6 +8,7 @@ var libUrl=require('url'); //URL解析模块
 var libFs = require("fs"); //文件系统模块
 var libPath = require("path"); //路径解析模块
 var cfg = require("../Common/Config");
+var socketio = require('socket.io');
 
 //Web服务器主函数,解析请求,返回Web内容
 var funWebSvr = function (req, res){
@@ -50,7 +51,12 @@ webSvr.on("error", function(error) {
 });
 
 //开始侦听8124端口
-webSvr.listen(cfg.HTTPServerPort, cfg.HTTPServerIP, function(){
+webSvr.listen(cfg.HTTPServerPort, function(){
     //向控制台输出服务启动的信息
     console.log('running at http://' + cfg.HTTPServerIP + ":" + cfg.HTTPServerPort + '/');
 });
+
+socketio.listen(webSvr);
+
+
+

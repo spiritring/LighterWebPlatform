@@ -1,44 +1,32 @@
 "use strict";
 
-var websocket = require('websocket');
+var socketio = require('socket.io');
 var http = require('http');
 
 function CreateServer(port, funInit, funReceive, funClose, funConnect) {
     var httpServer = http.createServer();
-
     httpServer.on('listening', function() {
         funInit();
     });
 
-    var wsServer = new websocket.server({
-        httpServer: httpServer,
-        maxReceivedMessageSize: 100000
-    });
-
-    wsServer.on('connect', function(hSocket){
-        funConnect(hSocket);
-    });
-
-    wsServer.on('request', function(request) {
-        var hSocket = request.accept(null, request.origin);
-
-        hSocket.on('message', function(message) {
-
-            funReceive(hSocket, message.utf8Data);
-        });
-
-        hSocket.on('close', function(reasonCode, description) {
-            funClose(hSocket, reasonCode, description);
-        });
-    });
-
     httpServer.listen(port);
+    var sio = socketio.listen(httpServer);
 
-    return httpServer;
+    sio.on('connection', function (hSocket) {
+        funConnect(hSocket);
+
+        hSocket.on('message', function (msg) {
+            funReceive(hSocket, msg);
+        });
+
+        hSocket.on('disconnect', function () {
+            funClose(hSocket);
+        });
+    });
 };
 
 function SendBuffer(hSocket, sBuffer) {
-    hSocket.sendUTF(sBuffer);
+    hSocket.emit('message', sBuffer);
 }
 
 module.exports = {

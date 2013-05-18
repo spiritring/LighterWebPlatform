@@ -34,7 +34,7 @@ var hASSocket = tcp.CreateClient(cfg.AdaptServerPort, "",
 
 /////////////////////////////////////////////////////////
 // ws服务器启动完成.监听消息
-var G_GateWay = null;
+var G_GateWay = {};
 var G_HallSocket = null;
 var G_GateWayTCP = null;
 
@@ -46,18 +46,18 @@ var G_PoolUUIDInGameServer = {};
 
 function RunServer_WS(iPORT, iUUID) {
     // 创建客户端服务器
-    G_GateWay = ws.CreateServer(iPORT,
+    ws.CreateServer(iPORT,
         function() {
             console.log("GateWay WebSocket Init Success! Port:" + iPORT + " UUID:" + iUUID);
             sPacket = {};
             sPacket.MM = "GW_RegGateWay"; //客户端自动连接网关操作
-            sPacket.IP = G_GateWay.address().address;
-            sPacket.Port = G_GateWay.address().port;
+            sPacket.IP = cfg.GateWayServerIP;
+            sPacket.Port = cfg.GateWayServerPort_WS;
             tcp.SendBuffer(hASSocket,JSON.stringify(sPacket));
 
             G_GateWay.UUID = iUUID;
-            G_GateWay.PORT = G_GateWay.address().port;
-            G_GateWay.IP = G_GateWay.address().address;
+            G_GateWay.PORT = cfg.GateWayServerPort_WS;
+            G_GateWay.IP = cfg.GateWayServerIP;
 
             //连接大厅
             G_HallSocket = tcp.CreateClient(cfg.HallServerPort, cfg.HallServerIP,

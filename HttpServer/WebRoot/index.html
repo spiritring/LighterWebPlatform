@@ -27,6 +27,7 @@
             width: 100px;
         }
     </style>
+    <script src="/socket.io/socket.io.js"></script>
     <script>
 
         var input = null;
@@ -61,6 +62,8 @@
             );
 
             function ConnectGateWay(sIP, iPORT) {
+                G_hSocket.PORT = iPORT;
+                G_hSocket.IP = sIP;
                 G_hSocket = WebSocketEngine(sIP, iPORT,
                         function(){
                             G_Output.innerHTML += "<strong>网关链接成功!</strong> Port:" + iPORT + " IP:" + sIP + "<br>";
@@ -97,8 +100,7 @@
 
                         }
                 );
-                G_hSocket.PORT = iPORT;
-                G_hSocket.IP = sIP;
+
             }
         }
 

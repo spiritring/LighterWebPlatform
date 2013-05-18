@@ -1,46 +1,22 @@
 (function (){
-    // connect to the Json Messaging server and return an 'connection' object
-    function connect(host, port, messageListener, errorListener) {
-        window.WebSocket = window.WebSocket || window.MozWebSocket;
-
-        if (!window.WebSocket) {
-            alert('Your browser does not support WebSocket.');
-            return null;
-        }
-
-        var hSocket = new WebSocket('ws://' + host + ':' + port);
-
-        hSocket.onmessage = function(sBuffer) {
-            var parsed = JSON.parse(sBuffer.data);
-            messageListener(parsed);
-        };
-
-        hSocket.onclose = function(code, reason, wasClean) {
-            alert("断开连接:" + reason + " Code:" + code);
-            errorListener();
-        };
-
-        return hSocket;
-    }
-
     // initialize
     WebSocketEngine = function(sIP,iPort,funInit,callbackMessage, callbackError) {
-        // connect to the local server
-        var connection = connect(
-            sIP,
-            iPort,
-            // message handler
-            callbackMessage,
-            // error handler
-            callbackError
-        );
-
-        // subscribe a topic
-        connection.onopen = function() {
+        var hSocket = io.connect('http://' + sIP + ':' + iPort);
+        hSocket.on('connect', function () {
             funInit();
-        };
+            hSocket.on('message', function(sBuffer) {
+                var parsed = JSON.parse(sBuffer);
+                TSLog(parsed.MM);
+                callbackMessage(parsed);
+            });
+            hSocket.on('disconnect', function() {
+                alert("断开连接");
+                callbackError();
+            });
+        });
 
-        return connection;
+        TSLog("GoInThere!");
+        return hSocket;
     };
 
     SendBuffer = function(hSocket, sPacket) {

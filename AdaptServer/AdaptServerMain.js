@@ -102,6 +102,7 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
             case "ConnectGateWay":
                 if(Pool_GateWay.length <= 0){
                     console.log("当前没有网关开启!");
+                    return;
                 }
 
                 var index = (G_ClientNumber - 1) % Pool_GateWay.length;
@@ -112,12 +113,11 @@ ws.CreateServer(cfg.AdaptServerPort_WS,
                 sPacket.IP = GW.IP;
                 sPacket.Port = GW.Port;
                 ws.SendBuffer(hSocket, JSON.stringify(sPacket));
-
                 break;
         }
     },
 
-    function (hSocket, reasonCode, description) {
+    function (hSocket) {
 
     },
 
