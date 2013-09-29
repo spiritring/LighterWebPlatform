@@ -51,8 +51,8 @@ function RunServer_WS(iPORT, iUUID) {
             console.log("GateWay WebSocket Init Success! Port:" + iPORT + " UUID:" + iUUID);
             sPacket = {};
             sPacket.MM = "GW_RegGateWay"; //客户端自动连接网关操作
-            sPacket.IP = cfg.GateWayServerIP;
-            sPacket.Port = cfg.GateWayServerPort_WS;
+            sPacket.IP = G_GateWayServer.address().port;
+            sPacket.Port = G_GateWayServer.address().port;
             tcp.SendBuffer(hASSocket,JSON.stringify(sPacket));
 
             G_GateWay.UUID = iUUID;
