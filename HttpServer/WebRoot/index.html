@@ -43,7 +43,7 @@
             G_Output = document.getElementById('output');
             input.value = "login:a";
 
-            G_hSocket = WebSocketEngine("192.168.1.103", 9901,
+            G_hSocket = WebSocketEngine("192.168.1.6", 9901,
                     function(){
                         var sPacket = {};
                         sPacket.MM = "ConnectGateWay";
@@ -53,7 +53,8 @@
                         switch(oPacket.MM)
                         {
                             case "ConnectGateWay":
-                                ConnectGateWay("192.168.1.103", oPacket.Port);
+                                ConnectGateWay("192.168.1.6", oPacket.Port);
+                                G_Output.innerHTML += "" + oPacket.Port
                                 break;
                         }
                     },
