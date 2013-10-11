@@ -52,11 +52,11 @@ function RunServer_WS(iPORT, iUUID) {
             var sPacket = {};
             sPacket.MM = "GW_RegGateWay"; //客户端自动连接网关操作
             sPacket.IP = cfg.GateWayServerIP;
-            sPacket.Port = G_GateWay.address().port;
+            sPacket.Port = iPORT;
             tcp.SendBuffer(hASSocket,JSON.stringify(sPacket));
 
             G_GateWay.UUID = iUUID;
-            G_GateWay.PORT = G_GateWay.address().port;
+            G_GateWay.PORT = iPORT;
             G_GateWay.IP = cfg.GateWayServerIP;
 
             //连接大厅
